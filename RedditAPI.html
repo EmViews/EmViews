@@ -63,7 +63,7 @@ $(document).ready(function() {
         $("#results").empty();
         var searchQuery = $("#input-name").val().trim();
         var limit = 10;
-        var queryURL = "https://www.reddit.com/search.json?q=" + searchQuery + "&limit=" + limit
+        var queryURL = "https://www.reddit.com/search.json?q=" + searchQuery + "+review&limit=" + limit
         console.log(queryURL)
 
         $.get(queryURL).done(function(response) {
@@ -76,7 +76,7 @@ $(document).ready(function() {
 
             for (var i = 0; i < children.length; i++) {
                 $("#results").append("<div><strong>" + children[i].data.title + "</strong><br><br>" + children[i].data.selftext + "<br><br><a href='" + children[i].data.url + "'>Original Post</a></div><hr>");
-                console.log(response.data.children[0].url)
+                console.log(response.data.children[i].url)
             }
         })
     });
