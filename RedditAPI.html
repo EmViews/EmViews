@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Reddit API Test</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <h1>Reddit API Test</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center" id="search-bar">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Add Product</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="input-name">Product Name</label>
+                                <input class="form-control" id="input-name" type="text">
+                            </div>
+                            <button class="btn btn-primary" id="submit-button" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center">
+            </div>
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10 text-center">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" id="product-search">Results:</h3>
+                    </div>
+                    <div class="panel-body" id="results">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center">
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $(document).on("click", ".btn", function() {
+        event.preventDefault();
+        // https://www.reddit.com/search.json?q=computer+wrist+pad+review&limit=10
+        $("#results").empty();
+        var searchQuery = $("#input-name").val().trim();
+        var limit = 10;
+        var queryURL = "https://www.reddit.com/search.json?q=" + searchQuery + "+review&limit=" + limit + "&sort=hot"
+            // console.log(queryURL)
+
+        function decodeHtml(html) {
+            var txt = document.createElement("textarea");
+            txt.innerHTML = html;
+            return txt.value;
+        }
+
+        $.get(queryURL).done(function(response) {
+            var children = response.data.children;
+
+            console.log(children)
+
+            for (var i = 0; i < children.length; i++) {
+
+                var formattedHTML = children[i].data.selftext_html ? children[i].data.selftext_html.slice(21, children[i].data.selftext_html.length - 20) : '';
+                var stringHTML = JSON.stringify(formattedHTML);
+                var replaceHTML = stringHTML.replace(/&lt;h1&gt/g, "&lt;h4 class='reddit-headers'&gt").replace(/&lt;\/h1&gt/g, "&lt;/h4&gt").replace(/&lt;h2&gt/g, "&lt;h4 class='reddit-headers'&gt").replace(/&lt;\/h2&gt/g, "&lt;/h4&gt").replace(/&lt;h3&gt/g, "&lt;h4 class='reddit-headers'&gt").replace(/&lt;\/h3&gt/g, "&lt;/h4&gt")
+
+                var decodedHTML = decodeHtml(JSON.parse(replaceHTML));
+
+                // console.log(decodedHTML)
+                var result = "result" + i;
+
+                $("#results").append(`<div class='results' id='${result}'><h4 class='reddit-result-title'><strong>Original Reddit Thread: <a href='https://www.reddit.com/${children[i].data.permalink}' target='_blank' class='reddit-result-link'>${children[i].data.title}</a></strong></h4><br><div class='reddit-result-body'>${decodedHTML}</div><br></div><hr>`);
+            }
+        })
+    });
+})
+</script>
+
+</html>
