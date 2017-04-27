@@ -39,9 +39,9 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center">
             </div>
-            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10 text-center">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title" id="product-search">Results:</h3>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center">
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center">
             </div>
         </div>
     </div>
@@ -64,19 +64,32 @@ $(document).ready(function() {
         var searchQuery = $("#input-name").val().trim();
         var limit = 10;
         var queryURL = "https://www.reddit.com/search.json?q=" + searchQuery + "+review&limit=" + limit
-        console.log(queryURL)
+            // console.log(queryURL)
+
+        function decodeHtml(html) {
+            var txt = document.createElement("textarea");
+            txt.innerHTML = html;
+            return txt.value;
+        }
 
         $.get(queryURL).done(function(response) {
-
-            console.log(response)
-            console.log(response.data.children)
-            console.log(response.data.children.url)
-                // $("#results").html('');
             var children = response.data.children;
 
+            console.log(children)
+
             for (var i = 0; i < children.length; i++) {
-                $("#results").append("<div><strong>" + children[i].data.title + "</strong><br><br>" + children[i].data.selftext + "<br><br><a href='" + children[i].data.url + "'>Original Post</a></div><hr>");
-                console.log(response.data.children[i].url)
+
+                var formattedHTML = children[i].data.selftext_html ? children[i].data.selftext_html.slice(21, children[i].data.selftext_html.length - 20) : '';
+                var stringHTML = JSON.stringify(formattedHTML);
+                var replaceHTML = stringHTML.replace(/&lt;h1&gt/g, "&lt;h4 class='reddit-headers'&gt").replace(/&lt;\/h1&gt/g, "&lt;/h4&gt").replace(/&lt;h2&gt/g, "&lt;h4 class='reddit-headers'&gt").replace(/&lt;\/h2&gt/g, "&lt;/h4&gt").replace(/&lt;h3&gt/g, "&lt;h4 class='reddit-headers'&gt").replace(/&lt;\/h3&gt/g, "&lt;/h4&gt")
+
+                var decodedHTML = decodeHtml(JSON.parse(replaceHTML));
+
+                // console.log(decodedHTML)
+                var result = "result" + i;
+
+                $("#results").append(`<div class='results' id='${result}'><h4 class='reddit-result-title'><strong>Original Reddit Thread: <a href='https://www.reddit.com/${children[i].data.permalink}' target='_blank' class='reddit-result-link'>${children[i].data.title}</a></strong></h4><br><div class='reddit-result-body'>${decodedHTML}</div><br></div><hr>`);
+
             }
         })
     });
