@@ -56,6 +56,7 @@
     </div>
 </body>
 <script type="text/javascript">
+
 $(document).ready(function() {
     $(document).on("click", ".btn", function() {
         event.preventDefault();
@@ -63,7 +64,7 @@ $(document).ready(function() {
         $("#results").empty();
         var searchQuery = $("#input-name").val().trim();
         var limit = 10;
-        var queryURL = "https://www.reddit.com/search.json?q=" + searchQuery + "+review&limit=" + limit
+        var queryURL = "https://www.reddit.com/search.json?q=" + searchQuery + "+review&limit=" + limit + "&sort=hot"
             // console.log(queryURL)
 
         function decodeHtml(html) {
@@ -89,7 +90,6 @@ $(document).ready(function() {
                 var result = "result" + i;
 
                 $("#results").append(`<div class='results' id='${result}'><h4 class='reddit-result-title'><strong>Original Reddit Thread: <a href='https://www.reddit.com/${children[i].data.permalink}' target='_blank' class='reddit-result-link'>${children[i].data.title}</a></strong></h4><br><div class='reddit-result-body'>${decodedHTML}</div><br></div><hr>`);
-
             }
         })
     });
