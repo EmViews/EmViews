@@ -68,14 +68,6 @@ $(document).ready(function() {
             $("#youtubes").show();
         })
 
-        $(document).on("click", ".btn", function() {
-            event.preventDefault();
-            $("#pictures").show();
-            $("#specifications").show();
-            $("#reddit-row").hide();
-            $("#comments").show();
-            $("#youtubes").hide();
-        })
 
     })
     // -----------------END OF DOCUMENT READY ---------------
