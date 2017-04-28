@@ -63,8 +63,9 @@ $(document).ready(function() {
         // https://www.reddit.com/search.json?q=computer+wrist+pad+review&limit=10
         $("#results").empty();
         var searchQuery = $("#input-name").val().trim();
+        console.log(searchQuery)
         var limit = 10;
-        var queryURL = "https://www.reddit.com/search.json?q=" + searchQuery + "+review&limit=" + limit + "&sort=hot"
+        var queryURL = "https://www.reddit.com/search.json?q=title:" + searchQuery + "+title:review&limit=" + limit + "&sort=hot"
             // console.log(queryURL)
 
         function decodeHtml(html) {
@@ -89,7 +90,7 @@ $(document).ready(function() {
                 // console.log(decodedHTML)
                 var result = "result" + i;
 
-                $("#results").append(`<div class='results' id='${result}'><h4 class='reddit-result-title'><strong>Original Reddit Thread: <a href='https://www.reddit.com/${children[i].data.permalink}' target='_blank' class='reddit-result-link'>${children[i].data.title}</a></strong></h4><br><div class='reddit-result-body'>${decodedHTML}</div><br></div><hr>`);
+                $("#results").append(`<div class='results' id='${result}'><h4 class='reddit-result-title'><strong>Original Reddit Thread: <a href='https://www.reddit.com/${children[i].data.permalink}' target='_blank' class='reddit-result-link'>${children[i].data.title}</a></strong></h4><br><div class='reddit-result-body'>${decodedHTML}</div><br></div><hr style='border-width:10px'>`);
             }
         })
     });
