@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>EmViews</title>
-	<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/6.0.0/normalize.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EmViews</title>
+    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/6.0.0/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/vaakash/jquery-collapser/master/jquery.collapser.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-default navbar-fixed-top" id="navbarTop">
 	  	<div class="container-fluid">
 	    	<div class="navbar-header">
 		      	<a class="navbar-brand" href="index.html">
@@ -21,17 +22,40 @@
 			  	<div class="form-group">
 			    	<input type="text" class="form-control" placeholder="Search" id="product-input">
 			  	</div>
-			  	<button type="submit" class="btn btn-default" id="submit-button">Submit</button>
+			  	<button type="submit" class="btn btn-default" id="submit-button1">Submit</button>
+			</form>
+			<button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+	  	</div>
+	</nav>
+
+	<nav class="navbar navbar-default navbar-fixed-top" id="navbarStart">
+	  	<div class="container-fluid">
+	    	<div class="navbar-header">
+		      	<a class="navbar-brand" href="index.html">
+		        	<h1>EmViews</h1>
+		      	</a>
+	    	</div>
+			<form class="navbar-form navbar-left" role="search">
+			  	<div class="form-group">
+			    	<input type="text" class="form-control" placeholder="Search" id="product-input">
+			  	</div>
+			  	<button type="submit" class="btn btn-default" id="submit-button2">Submit</button>
 			</form>
 			<button type="button" class="btn btn-default navbar-btn navbar-right">Sign Up / Log In</button>
 	  	</div>
 	</nav>
 
 	<div class="container-fluid">
-		<div id="searchResults" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+		<div id="searchResultsFirst" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<h2>Search Results</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa numquam maiores magnam corrupti veritatis. Nesciunt in iure eveniet distinctio alias labore, perferendis, dicta necessitatibus suscipit ducimus adipisci, aliquid odit doloribus.</p>
 		</div>
+
+		<div id="searchResultsSecond" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<h2>Search Results</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa numquam maiores magnam corrupti veritatis. Nesciunt in iure eveniet distinctio alias labore, perferendis, dicta necessitatibus suscipit ducimus adipisci, aliquid odit doloribus.</p>
+		</div>
+
 		<div id="mainBody" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
 			<div id="nameStars" class="row">
 				<div id="productName" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -61,15 +85,12 @@
 		</div>
 		<div id="videos" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
 			<h2>YouTube Videos</h2>
-
-			<p>YOUTUBEEEEEEEEEEEEEEEEE</p>
-
 		</div>
 	</div>
-	TESTING TESTING
-	TEST TEST
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
+  <script type="text/javascript" src="assets/javascript/redditAPI.js"></script>
 	<script type="text/javascript" src="assets/javascript/youtube.js"></script>
 	<script src="https://apis.google.com/js/client.js?onload=init"></script>
 </body>
+
 </html>

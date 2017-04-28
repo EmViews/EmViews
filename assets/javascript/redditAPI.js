@@ -1,56 +1,14 @@
 $(document).ready(function() {
-        // -----------------FIREBASE KEY ------------------------
-        var config = {
-			apiKey: "AIzaSyD5_w1GE5wacfN-yQrtBI5XVPlzqT01v1w",
-		    authDomain: "emviews-c41e8.firebaseapp.com",
-		    databaseURL: "https://emviews-c41e8.firebaseio.com",
-		    projectId: "emviews-c41e8",
-		    storageBucket: "emviews-c41e8.appspot.com",
-		    messagingSenderId: "530771491172"
-		};
-		  
-		firebase.initializeApp(config);
-        // -----------------END OF FIREBASE KEY------------------
-
-        // UI modification
-        $("#navbarTop").hide();
-        $("#searchResultsFirst").hide();
-        $("#searchResultsSecond").hide();
-        $("#mainBody").hide();
-        $("#videos").hide();
-
-        $(document).on('click', "#submit-button2", function() {
-            $("#navbarStart").hide();
-            $("#navbarTop").show();
-            $("#searchResultsFirst").show();
-        });
-
-        $(document).on('click', '#searchResultsFirst', function() {
-            event.preventDefault();
-            $("#searchResultsFirst").hide();
-            $("#searchResultsSecond").show();
-            $("#mainBody").show();
-            $("#videos").show();
-        });
-
-        $(document).on('click', '#submit-button1', function() {
-            event.preventDefault();
-            $("#searchResultsSecond").hide();
-            $("#mainBody").hide();
-            $("#videos").hide();
-            $("#searchResultsFirst").show();
-        });
-
         // ------------------REDDIT API--------------------------
 
         $(document).on("click", ".btn", function() {
             event.preventDefault();
             // Example query:
-            // https://www.reddit.com/search.json?q=title:computer+title:wrist+title:pad+title:review&limit=10&sort=hot
+            // https://www.reddit.com/search.json?q=title:computer+wrist+pad+title:review&limit=10&sort=hot
             $("#reddit-results").empty();
             var searchQuery = $("#product-input").val().trim();
             var limit = 10;
-            var queryURL = "https://www.reddit.com/search.json?q=title:" + searchQuery + "+title:review&limit=" + limit + "&sort=hot"
+            var queryURL = "https://www.reddit.com/search.json?q=title:" + searchQuery + "+title:review+self=yes&limit=" + limit + "&sort=hot"
 
             // function that decodes ASCII to HTML:
             function decodeHtml(html) {
@@ -61,6 +19,7 @@ $(document).ready(function() {
 
             $.get(queryURL).done(function(response) {
                 var children = response.data.children;
+                // if(children[i].data.is_self === true)
                 for (var i = 0; i < children.length; i++) {
                     // splices off the comments
                     var formattedHTML = children[i].data.selftext_html ? children[i].data.selftext_html.slice(21, children[i].data.selftext_html.length - 20) : '';
@@ -75,6 +34,11 @@ $(document).ready(function() {
                     var result = "result" + i;
                     // Appends results (title/link to original thread, and formatted body) to page
                     $("#reddit-results").append(`<div class='results' id='${result}'><h4 class='reddit-result-title'><strong>Original Reddit Thread: <a href='https://www.reddit.com/${children[i].data.permalink}' target='_blank' class='reddit-result-link'>${children[i].data.title}</a></strong></h4><br><div class='reddit-result-body'>${decodedHTML}</div><br></div><hr class='result-breakpoint'>`);
+                
+                     $(".reddit-result-body").collapser({
+                        mode: 'lines',
+                        truncate: 3
+                         })
                 }
             })
         });
