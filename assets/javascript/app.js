@@ -18,6 +18,8 @@ $(document).ready(function() {
         $("#searchResultsSecond").hide();
         $("#mainBody").hide();
         $("#videos").hide();
+        $("#reddit-row").hide();
+        $("#youtubes").hide();
 
         $(document).on('click', "#submit-button2", function() {
             $("#navbarStart").hide();
@@ -40,9 +42,29 @@ $(document).ready(function() {
             $("#videos").hide();
             $("#searchResultsFirst").show();
         });
+        $(document).on("click", "#productBtn", function() {
+            event.preventDefault();
+            $("#pictures").show();
+            $("#specifications").show();
+            $("#reddit-row").hide();
+            $("#comments").show();
+            $("#youtubes").hide();
+        })
+        $(document).on("click", "#redditBtn", function() {
+            event.preventDefault();
+            $("#pictures").hide();
+            $("#specifications").hide();
+            $("#reddit-row").show();
+            $("#comments").hide();
+            $("#youtubes").hide();
+        })
+        $(document).on("click", "#youtubeBtn", function() {
+            event.preventDefault();
+            $("#pictures").hide();
+            $("#specifications").hide();
+            $("#reddit-row").hide();
+            $("#comments").hide();
+            $("#youtubes").show();
+        })
     })
     // -----------------END OF DOCUMENT READY ---------------
-
-
-
-// phat hacker skills
