@@ -12,6 +12,26 @@ $(document).ready(function() {
         firebase.initializeApp(config);
         // -----------------END OF FIREBASE KEY------------------
 
+        // UI modification
+        $("#searchResultsSecond").hide();
+        $("#mainBody").hide();
+        $("#videos").hide();
+
+        $(document).on('click', '#searchResultsFirst', function() {
+            event.preventDefault();
+            $("#searchResultsFirst").hide();
+            $("#searchResultsSecond").show();
+            $("#mainBody").show();
+            $("#videos").show();
+        })
+
+        $(document).on('click', '#submit-button', function() {
+            event.preventDefault();
+            $("#searchResultsSecond").hide();
+            $("#mainBody").hide();
+            $("#videos").hide();
+            $("#searchResultsFirst").show();
+        })
 
         // ------------------REDDIT API--------------------------
 
@@ -40,7 +60,7 @@ $(document).ready(function() {
                     var stringHTML = JSON.stringify(formattedHTML);
                     // Replaces ugly-assci headers to to smaller header tags, also with class tags so we can manipulate with CSS
                     var replaceHTML = stringHTML.replace(/&lt;h1&gt/g, "&lt;h4 class='reddit-headers'&gt").replace(/&lt;\/h1&gt/g, "&lt;/h4&gt").replace(/&lt;h2&gt/g, "&lt;h4 class='reddit-headers'&gt").replace(/&lt;\/h2&gt/g, "&lt;/h4&gt").replace(/&lt;h3&gt/g, "&lt;h4 class='reddit-headers'&gt").replace(/&lt;\/h3&gt/g, "&lt;/h4&gt")
-                    //  Runs the decodeHtml function from above on our html with replaced elements
+                        //  Runs the decodeHtml function from above on our html with replaced elements
                     var decodedHTML = decodeHtml(JSON.parse(replaceHTML));
                     // console.log(decodedHTML)
                     // Assigns a variable to give each result a unique ID
