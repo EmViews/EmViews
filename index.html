@@ -10,7 +10,7 @@
 	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-default navbar-fixed-top" id="navbarTop">
 	  	<div class="container-fluid">
 	    	<div class="navbar-header">
 		      	<a class="navbar-brand" href="index.html">
@@ -21,7 +21,24 @@
 			  	<div class="form-group">
 			    	<input type="text" class="form-control" placeholder="Search" id="product-input">
 			  	</div>
-			  	<button type="submit" class="btn btn-default" id="submit-button">Submit</button>
+			  	<button type="submit" class="btn btn-default" id="submit-button1">Submit</button>
+			</form>
+			<button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+	  	</div>
+	</nav>
+
+	<nav class="navbar navbar-default navbar-fixed-top" id="navbarStart">
+	  	<div class="container-fluid">
+	    	<div class="navbar-header">
+		      	<a class="navbar-brand" href="index.html">
+		        	<h1>EmViews</h1>
+		      	</a>
+	    	</div>
+			<form class="navbar-form navbar-left" role="search">
+			  	<div class="form-group">
+			    	<input type="text" class="form-control" placeholder="Search" id="product-input">
+			  	</div>
+			  	<button type="submit" class="btn btn-default" id="submit-button2">Submit</button>
 			</form>
 			<button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
 	  	</div>
