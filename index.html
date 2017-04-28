@@ -1,93 +1,105 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>EmViews</title>
-	<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/6.0.0/normalize.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EmViews</title>
+    <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/6.0.0/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
 </head>
+
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top" id="navbarTop">
-	  	<div class="container-fluid">
-	    	<div class="navbar-header">
-		      	<a class="navbar-brand" href="index.html">
-		        	<h1>EmViews</h1>
-		      	</a>
-	    	</div>
-			<form class="navbar-form navbar-left" role="search">
-			  	<div class="form-group">
-			    	<input type="text" class="form-control" placeholder="Search" id="product-input">
-			  	</div>
-			  	<button type="submit" class="btn btn-default" id="submit-button1">Submit</button>
-			</form>
-			<button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
-	  	</div>
-	</nav>
+    <!-- Initial search bar at start -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="navbarStart">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <h1>EmViews</h1>
+                </a>
+            </div>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" id="product-input">
+                </div>
+                <button type="submit" class="btn btn-default" id="submit-button2">Submit</button>
+            </form>
+            <button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+        </div>
+    </nav>
+    <!-- after first search -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="navbarTop">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <h1>EmViews</h1>
+                </a>
+            </div>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <div>
+                        <input type="text" class="form-control" placeholder="Search" id="product-input">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-default" id="submit-button1">Submit</button>
+            </form>
+            <button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div id="searchResultsFirst" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h2>Search Results</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa numquam maiores magnam corrupti veritatis. Nesciunt in iure eveniet distinctio alias labore, perferendis, dicta necessitatibus suscipit ducimus adipisci, aliquid odit doloribus.</p>
+        </div>
+        <div id="searchResultsSecond" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <h2>Search Results</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa numquam maiores magnam corrupti veritatis. Nesciunt in iure eveniet distinctio alias labore, perferendis, dicta necessitatibus suscipit ducimus adipisci, aliquid odit doloribus.</p>
+        </div>
+        <div id="mainBody" class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-9">
+            <div id="nameStars" class="row">
+                
+                <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" id="productBtn">Product Info</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" id="redditBtn">Reddit Treads</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" id="youtubeBtn">YouTube Videos</button>
+                    </div>
+                </div>
 
-	<nav class="navbar navbar-default navbar-fixed-top" id="navbarStart">
-	  	<div class="container-fluid">
-	    	<div class="navbar-header">
-		      	<a class="navbar-brand" href="index.html">
-		        	<h1>EmViews</h1>
-		      	</a>
-	    	</div>
-			<form class="navbar-form navbar-left" role="search">
-			  	<div class="form-group">
-			    	<input type="text" class="form-control" placeholder="Search" id="product-input">
-			  	</div>
-			  	<button type="submit" class="btn btn-default" id="submit-button2">Submit</button>
-			</form>
-			<button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
-	  	</div>
-	</nav>
+            </div>
 
-	<div class="container-fluid">
-		<div id="searchResultsFirst" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<h2>Search Results</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa numquam maiores magnam corrupti veritatis. Nesciunt in iure eveniet distinctio alias labore, perferendis, dicta necessitatibus suscipit ducimus adipisci, aliquid odit doloribus.</p>
-		</div>
-
-		<div id="searchResultsSecond" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
-			<h2>Search Results</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa numquam maiores magnam corrupti veritatis. Nesciunt in iure eveniet distinctio alias labore, perferendis, dicta necessitatibus suscipit ducimus adipisci, aliquid odit doloribus.</p>
-		</div>
-
-		<div id="mainBody" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			<div id="nameStars" class="row">
-				<div id="productName" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-					<h2>Product Name</h2>
-				</div>
-				<div id="starRating" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-					<h2>Star Rating</h2>
-				</div>
-			</div>
-			<div id="pictures" class="row">
-				<h2>Pictures</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam nesciunt animi, dolores veniam modi voluptates rem inventore excepturi minus, quae. Minus possimus quisquam, voluptates odit culpa? Corporis, provident, aliquam!</p>
-			</div>
-			<div id="specifications" class="row">
-				<h2>Specifications</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit soluta fugit nisi, doloribus unde ab. Voluptatem, architecto molestias repellat illo. Minus ad voluptates esse ipsam ducimus dolor dolore corporis suscipit.</p>
-			</div>
-			<div id="reddit-row" class="row">
-				<h2>Reddit Threads</h2>
-				<div class="col-xl-12 col-lg-12 col-md-12 col-md-12 col-sm-12 col-xs-12" id="reddit-results">
-				</div>
-			</div>
+            <div id="pictures" class="row">
+                <h2>Pictures</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam nesciunt animi, dolores veniam modi voluptates rem inventore excepturi minus, quae. Minus possimus quisquam, voluptates odit culpa? Corporis, provident, aliquam!</p>
+            </div>
+            <div id="specifications" class="row">
+                <h2>Specifications</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit soluta fugit nisi, doloribus unde ab. Voluptatem, architecto molestias repellat illo. Minus ad voluptates esse ipsam ducimus dolor dolore corporis suscipit.</p>
+            </div>
 			<div id="comments" class="row">
-				<h2>Comments</h2>
-				<p>JOHN github test</p>
-			</div>
-		</div>
-		<div id="videos" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
-			<h2>YouTube Videos</h2>
-		</div>
-	</div>
-	<script type="text/javascript" src="assets/javascript/app.js"></script>
-	<script type="text/javascript" src="assets/javascript/youtube.js"></script>
-	<script src="https://apis.google.com/js/client.js?onload=init"></script>
+                <h2>Comments</h2>
+                
+            </div>
+            <div id="reddit-row" class="row">
+                <h2>Reddit Threads</h2>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-md-12 col-sm-12 col-xs-12" id="reddit-results">
+                </div>
+            </div>
+            <div id="youtubes" class="row">
+                <h2>Youtube Videos</h2>
+                
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script type="text/javascript" src="assets/javascript/youtube.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
 </body>
+
 </html>
