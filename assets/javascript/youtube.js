@@ -9,8 +9,8 @@ $(function() {
         var request = gapi.client.youtube.search.list({
             part: "snippet",
             type: "video",
-            q: encodeURIComponent($("#product-input").val()).replace(/%20/g, "+"),
-            maxResults: 3,
+            q: encodeURIComponent($("#product-input").val()+"review").replace(/%20/g, "+"),
+            maxResults: 5,
             order: "viewCount",
             publishedAfter: "2015-01-01T00:00:00Z"
         });
@@ -29,6 +29,5 @@ $(function() {
 function init() {
     gapi.client.setApiKey("AIzaSyDR8HyLqczOk_klhd_wZASuOlyEr-nsUfM");
     gapi.client.load("youtube", "v3", function() {
-
     });
-}
+};
