@@ -13,9 +13,17 @@ $(document).ready(function() {
         // -----------------END OF FIREBASE KEY------------------
 
         // UI modification
+        $("#navbarTop").hide();
+        $("#searchResultsFirst").hide();
         $("#searchResultsSecond").hide();
         $("#mainBody").hide();
         $("#videos").hide();
+
+        $(document).on('click', "#submit-button2", function() {
+            $("#navbarStart").hide();
+            $("#navbarTop").show();
+            $("#searchResultsFirst").show();
+        });
 
         $(document).on('click', '#searchResultsFirst', function() {
             event.preventDefault();
@@ -23,15 +31,15 @@ $(document).ready(function() {
             $("#searchResultsSecond").show();
             $("#mainBody").show();
             $("#videos").show();
-        })
+        });
 
-        $(document).on('click', '#submit-button', function() {
+        $(document).on('click', '#submit-button1', function() {
             event.preventDefault();
             $("#searchResultsSecond").hide();
             $("#mainBody").hide();
             $("#videos").hide();
             $("#searchResultsFirst").show();
-        })
+        });
 
         // ------------------REDDIT API--------------------------
 
