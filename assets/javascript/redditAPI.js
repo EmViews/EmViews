@@ -1,83 +1,14 @@
 $(document).ready(function() {
-        // -----------------FIREBASE KEY ------------------------
-        var config = {
-            apiKey: "AIzaSyDBcUj9XDES0jIESlddtCodAWt8pWCfsLA",
-            authDomain: "john-57aba.firebaseapp.com",
-            databaseURL: "https://john-57aba.firebaseio.com",
-            projectId: "john-57aba",
-            storageBucket: "john-57aba.appspot.com",
-            messagingSenderId: "309633750648"
-        };
-
-        firebase.initializeApp(config);
-        // -----------------END OF FIREBASE KEY------------------
-
-        // UI modification
-        $("#navbarTop").hide();
-        $("#searchResultsFirst").hide();
-        $("#searchResultsSecond").hide();
-        $("#mainBody").hide();
-        $("#videos").hide();
-        $("#reddit-row").hide();
-        $("#youtubes").hide();
-
-        $(document).on('click', "#submit-button2", function() {
-            $("#navbarStart").hide();
-            $("#navbarTop").show();
-            $("#searchResultsFirst").show();
-        });
-
-        $(document).on('click', '#searchResultsFirst', function() {
-            event.preventDefault();
-            $("#searchResultsFirst").hide();
-            $("#searchResultsSecond").show();
-            $("#mainBody").show();
-            $("#videos").show();
-        });
-
-        $(document).on('click', '#submit-button1', function() {
-            event.preventDefault();
-            $("#searchResultsSecond").hide();
-            $("#mainBody").hide();
-            $("#videos").hide();
-            $("#searchResultsFirst").show();
-        });
-        $(document).on("click", "#productBtn", function() {
-            event.preventDefault();
-            $("#pictures").show();
-            $("#specifications").show();
-            $("#reddit-row").hide();
-            $("#comments").show();
-            $("#youtubes").hide();
-        })
-        $(document).on("click", "#redditBtn", function() {
-            event.preventDefault();
-            $("#pictures").hide();
-            $("#specifications").hide();
-            $("#reddit-row").show();
-            $("#comments").hide();
-            $("#youtubes").hide();
-        })
-        $(document).on("click", "#youtubeBtn", function() {
-            event.preventDefault();
-            $("#pictures").hide();
-            $("#specifications").hide();
-            $("#reddit-row").hide();
-            $("#comments").hide();
-            $("#youtubes").show();
-        })
-
-
         // ------------------REDDIT API--------------------------
 
         $(document).on("click", ".btn", function() {
             event.preventDefault();
             // Example query:
-            // https://www.reddit.com/search.json?q=title:computer+title:wrist+title:pad+title:review&limit=10&sort=hot
+            // https://www.reddit.com/search.json?q=title:computer+wrist+pad+title:review&limit=10&sort=hot
             $("#reddit-results").empty();
             var searchQuery = $("#product-input").val().trim();
             var limit = 10;
-            var queryURL = "https://www.reddit.com/search.json?q=title:" + searchQuery + "+title:review&limit=" + limit + "&sort=hot"
+            var queryURL = "https://www.reddit.com/search.json?q=title:" + searchQuery + "+title:review+self=yes&limit=" + limit + "&sort=hot"
 
             // function that decodes ASCII to HTML:
             function decodeHtml(html) {
@@ -88,6 +19,7 @@ $(document).ready(function() {
 
             $.get(queryURL).done(function(response) {
                 var children = response.data.children;
+                // if(children[i].data.is_self === true)
                 for (var i = 0; i < children.length; i++) {
                     // splices off the comments
                     var formattedHTML = children[i].data.selftext_html ? children[i].data.selftext_html.slice(21, children[i].data.selftext_html.length - 20) : '';
@@ -102,6 +34,11 @@ $(document).ready(function() {
                     var result = "result" + i;
                     // Appends results (title/link to original thread, and formatted body) to page
                     $("#reddit-results").append(`<div class='results' id='${result}'><h4 class='reddit-result-title'><strong>Original Reddit Thread: <a href='https://www.reddit.com/${children[i].data.permalink}' target='_blank' class='reddit-result-link'>${children[i].data.title}</a></strong></h4><br><div class='reddit-result-body'>${decodedHTML}</div><br></div><hr class='result-breakpoint'>`);
+                
+                     $(".reddit-result-body").collapser({
+                        mode: 'lines',
+                        truncate: 3
+                         })
                 }
             })
         });
