@@ -43,6 +43,7 @@ $(document).ready(function() {
             $("#searchResultsFirst").show();
         });
         $(document).on("click", "#productBtn", function() {
+
             event.preventDefault();
             $("#pictures").show();
             $("#specifications").show();
@@ -66,5 +67,15 @@ $(document).ready(function() {
             $("#comments").hide();
             $("#youtubes").show();
         })
+
+        $(document).on("click", ".btn", function() {
+            event.preventDefault();
+            $("#pictures").show();
+            $("#specifications").show();
+            $("#reddit-row").hide();
+            $("#comments").show();
+            $("#youtubes").hide();
+        })
+
     })
     // -----------------END OF DOCUMENT READY ---------------
