@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <!-- Retrieved data will be dumped here -->
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script type="text/javascript">
+  //Amazon Associate ID: emv0d-20
+  //Access key: AKIAJU2U72YVLCCGZ5PQ
+  //Secret Access key: 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
+    // This is our API key
+    var APIKey = "166a433c57516f51dfab1f7edaed8413";
+
+    // Here we are building the URL we need to query the database
+//    var queryURL = "http://api.openweathermap.org/data/2.5/weather?" +
+//      "q=Bujumbura,Burundi&units=imperial&appid=" + APIKey;
+    var queryURL = "http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAJU2U72YVLCCGZ5PQ&AssociateTag=emv0d-20&IncludeReviewsSummary=true&Keywords=pokemon%20sun&Operation=ItemSearch&ResponseGroup=EditorialReview%2CImages%2CItemAttributes%2COffers%2COfferSummary%2CReviews&SearchIndex=All&Service=AWSECommerceService&Timestamp=2017-04-27T04%3A30%3A02.000Z&Signature=BiHefsVIsLf%2B7sfGXcf4Scn2mX%2FrtURRrEMHzG%2FbqOI%3D"
+    // Here we run our AJAX call to the OpenWeatherMap API
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+      // We store all of the retrieved data inside of an object called "response"
+      .done(function(response) {
+
+        // Log the queryURL
+        console.log(queryURL);
+
+        // Log the resulting object
+        console.log(response);
+
+      });
+  </script>
+</body>
+
+</html>

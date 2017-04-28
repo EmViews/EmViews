@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  Wil test
+  hey
+<head>
+  <meta charset="utf-8">
+  <title>testtesttest</title>
+</head>
+
+<body>
+  <!-- Retrieved data will be dumped here -->
+  <div class="ebay"></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+
+//sandbox Key
+
+    var appID = "williaml-leungwk-PRD-e69e2c47f-6055ffc4";
+    var query = "nintendo switch";
+    var limitEntries = 4
+
+    var queryURL = "http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME="+appID+"&GLOBAL-ID=EBAY-US&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords="+query+"&paginationInput.entriesPerPage="+limitEntries;
+
+//test url: http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=williaml-leungwk-PRD-e69e2c47f-6055ffc4&GLOBAL-ID=EBAY-US&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=nintendo+switch&paginationInput.entriesPerPage=4
+
+console.log("hello");
+
+    // Here we run our AJAX call to the open API
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+      // We store all of the retrieved data inside of an object called "response"
+      .done(function(response) {
+
+        var reformed = JSON.parse(response); 
+        console.log(reformed);
+
+        for(var i = 0; i<limitEntries; i++){
+        //console.log(reformed.findItemsByKeywordsResponse[0].searchResult[0].item[0].galleryURL[0]);
+
+        //gets image png for each item
+        console.log(reformed.findItemsByKeywordsResponse[0].searchResult[0].item[i].galleryURL[0]);
+        
+        }
+      });
+
+  </script>
+</body>
+
+</html>
