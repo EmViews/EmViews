@@ -58,7 +58,8 @@ $(document).ready(function() {
             $("#reddit-row").show();
             $("#comments").hide();
             $("#youtubes").hide();
-        })
+            $("#productBtn").removeClass("active");
+        });
         $(document).on("click", "#youtubeBtn", function() {
             event.preventDefault();
             $("#pictures").hide();
@@ -66,7 +67,10 @@ $(document).ready(function() {
             $("#reddit-row").hide();
             $("#comments").hide();
             $("#youtubes").show();
-        })
+            $("#productBtn").removeClass("active");
+        });
+        
+
 
 
     })
