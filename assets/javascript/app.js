@@ -66,6 +66,7 @@ $(document).ready(function() {
             $("#comments").hide();
             $("#youtubes").show();
         })
+        
 
 
         // ------------------REDDIT API--------------------------
