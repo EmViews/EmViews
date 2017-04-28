@@ -1,15 +1,15 @@
 $(document).ready(function() {
         // -----------------FIREBASE KEY ------------------------
         var config = {
-            apiKey: "AIzaSyDBcUj9XDES0jIESlddtCodAWt8pWCfsLA",
-            authDomain: "john-57aba.firebaseapp.com",
-            databaseURL: "https://john-57aba.firebaseio.com",
-            projectId: "john-57aba",
-            storageBucket: "john-57aba.appspot.com",
-            messagingSenderId: "309633750648"
-        };
-
-        firebase.initializeApp(config);
+			apiKey: "AIzaSyD5_w1GE5wacfN-yQrtBI5XVPlzqT01v1w",
+		    authDomain: "emviews-c41e8.firebaseapp.com",
+		    databaseURL: "https://emviews-c41e8.firebaseio.com",
+		    projectId: "emviews-c41e8",
+		    storageBucket: "emviews-c41e8.appspot.com",
+		    messagingSenderId: "530771491172"
+		};
+		  
+		firebase.initializeApp(config);
         // -----------------END OF FIREBASE KEY------------------
 
 
