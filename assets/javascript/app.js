@@ -33,11 +33,9 @@ $(document).ready(function() {
 
             $.get(queryURL).done(function(response) {
                 var children = response.data.children;
-                // console.log(children)
                 for (var i = 0; i < children.length; i++) {
                     // splices off the comments
                     var formattedHTML = children[i].data.selftext_html ? children[i].data.selftext_html.slice(21, children[i].data.selftext_html.length - 20) : '';
-
                     // Changes the formatted HTML to a string, because the replace function only works on strings
                     var stringHTML = JSON.stringify(formattedHTML);
                     // Replaces ugly-assci headers to to smaller header tags, also with class tags so we can manipulate with CSS
@@ -55,3 +53,7 @@ $(document).ready(function() {
         // -----------------END OF REDDIT API -------------------
     })
     // -----------------END OF DOCUMENT READY ---------------
+
+
+
+// phat hacker skills
