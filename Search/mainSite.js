@@ -1,0 +1,82 @@
+var siteResponse = {
+        "code": "OK",
+        "total": 1,
+        "offset": 0,
+        "items": [{
+            "ean": "0045496590093",
+            "title": "Nintendo Switch Console Neon Limited Bundle Neon Joycons | Confirmed Preorder",
+            "description": "Show off your personality when playing favorite Switch video games with this neon Nintendo Joy-Con controller. The small size lets you cradle it in your hand for maximum control, and the ergonomically designed buttons and analog stick reduce fatigue. This Nintendo Joy-Con controller contains a 525 mAh rechargeable battery for hours of play.",
+            "upc": "045496590093",
+            "brand": "Nintendo",
+            "model": "HACSKABAA",
+            "color": "Black",
+            "size": "",
+            "dimension": "",
+            "weight": "",
+            "currency": "",
+            "lowest_recorded_price": 7.99,
+            "images": ["http://images.shopko.com/get/w/245/h/245/3824360_3383.jpg?notfound=notavailable", "http://target.scene7.com/is/image/Target/52189185?wid=1000&hei=1000", "http://img.bbystatic.com/BestBuy_US/images/products/5670/5670100_sc.jpg", "http://img1.r10.io/PIC/121929107/0/1/250/121929107.jpg", "http://images.frys.com/art/product/300x300/9072037.01.prod.jpg"],
+            "offers": [{
+                "merchant": "Frys Electronics",
+                "domain": "frys.com",
+                "title": "Nintendo Switch Hardware Joy-Con - Neon Blue/Red",
+                "currency": "",
+                "list_price": "",
+                "price": 299.99,
+                "shipping": "",
+                "condition": "New",
+                "availability": "",
+                "link": "http://www.upcitemdb.com/norob/alink/?id=v2r20303w243e494y2&tid=1&seq=1493412110&plt=cc4dff707528c7931e65af0c1b6437b4",
+                "updated_t": 1489777167
+            }, {
+                "merchant": "Rakuten(Buy.com)",
+                "domain": "rakuten.com",
+                "title": "Nintendo Switch Handheld Video Game System 32GB with Neon Blue and Red Joy-Con",
+                "currency": "",
+                "list_price": "",
+                "price": 489.95,
+                "shipping": "Free Shipping",
+                "condition": "New",
+                "availability": "Out of Stock",
+                "link": "http://www.upcitemdb.com/norob/alink/?id=v2s223031363e4a4x2&tid=1&seq=1493412110&plt=ee3cdbf3d9b31adcc4769f547a67db50",
+                "updated_t": 1491685073
+            }, {
+                "merchant": "Best Buy",
+                "domain": "bestbuy.com",
+                "title": "Nintendo Of America - Switch 32gb Console - Neon Red/neon Blue Joy-con",
+                "currency": "",
+                "list_price": "",
+                "price": 299.99,
+                "shipping": "",
+                "condition": "New",
+                "availability": "",
+                "link": "http://www.upcitemdb.com/norob/alink/?id=v2q233y2z253c444u2&tid=1&seq=1493412110&plt=17e7d24a1409cbd829d3131d2d84f33c",
+                "updated_t": 1493332821
+            }, {
+                "merchant": "Target",
+                "domain": "target.com",
+                "title": "Nintendo Switch with Neon Blue and Neon Red Joy-Con, Black",
+                "currency": "",
+                "list_price": "",
+                "price": 299.99,
+                "shipping": "",
+                "condition": "New",
+                "availability": "",
+                "link": "http://www.upcitemdb.com/norob/alink/?id=v2r203x2v26364c4u2&tid=1&seq=1493412110&plt=faf13e22764840325c0e1aa8b8fa49e2",
+                "updated_t": 1493352229
+            }, {
+                "merchant": "Shopko",
+                "domain": "shopko.com",
+                "title": "Nintendo - Nintendo Switch 32GB Console - Neon Red/Neon Blue Joy-Con",
+                "currency": "",
+                "list_price": "",
+                "price": 299.99,
+                "shipping": "23.99",
+                "condition": "New",
+                "availability": "",
+                "link": "http://www.upcitemdb.com/norob/alink/?id=v2s213y2y2x294d4x2&tid=1&seq=1493412110&plt=cac64bc557563c605c9a6780ac6c8913",
+                "updated_t": 1493409659
+            }],
+            "elid": "172577484228"
+        }]
+    };
