@@ -36,7 +36,7 @@ $(document).ready(function() {
                         // Assigns a variable to give each result a unique ID
                         var result = "result" + i;
                         // Appends results (title/link to original thread, and formatted body) to page
-                        $("#reddit-results").append(`<div class='reddit-results-div' id='${result}'><h4 class='reddit-result-title'><strong>Original Reddit Thread: <a href='https://www.reddit.com/${children[i].data.permalink}' target='_blank' class='reddit-result-link'>${children[i].data.title}</a></strong></h4><br><div class='reddit-result-body'>${decodedHTML}</div><br></div><hr class='result-breakpoint'>`);
+                        $("#reddit-results").append(`<div class='reddit-results-div' id='${result}'><h4 class='reddit-result-title'><strong>Original Reddit Thread: <a href='https://www.reddit.com/${children[i].data.permalink}' target='_blank' class='reddit-results-link'>${children[i].data.title}</a></strong></h4><br><div class='reddit-result-body'>${decodedHTML}</div></div><br>`);
                         // ----------------Collapser Function ----------------------
                         $(".reddit-result-body").collapser({
                                 mode: 'lines',
