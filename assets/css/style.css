@@ -13,3 +13,7 @@ body {
 	top:45%;
 	border: 1px solid grey;
 }
+
+#sign-in-button{
+	margin-right: 10px;
+}

@@ -22,51 +22,51 @@ $(document).ready(function() {
         $("#youtubes").hide();
 
         $(document).on('click', "#submit-button2", function() {
-            $("#navbarStart").hide();
-            $("#navbarTop").show();
-            $("#searchResultsFirst").show();
+            $("#navbarStart").hide(1000);
+            $("#navbarTop").show(1000);
+            $("#searchResultsFirst").show(1000);
         });
 
         $(document).on('click', '#searchResultsFirst', function() {
             event.preventDefault();
-            $("#searchResultsFirst").hide();
-            $("#searchResultsSecond").show();
-            $("#mainBody").show();
-            $("#videos").show();
+            $("#searchResultsFirst").hide(1000);
+            $("#searchResultsSecond").show(1000);
+            $("#mainBody").show(1000);
+            $("#videos").show(1000);
         });
 
         $(document).on('click', '#submit-button1', function() {
             event.preventDefault();
-            $("#searchResultsSecond").hide();
-            $("#mainBody").hide();
-            $("#videos").hide();
-            $("#searchResultsFirst").show();
+            $("#searchResultsSecond").hide(1000);
+            $("#mainBody").hide(1000);
+            $("#videos").hide(1000);
+            $("#searchResultsFirst").show(1000);
         });
         $(document).on("click", "#productBtn", function() {
 
             event.preventDefault();
-            $("#pictures").show();
-            $("#specifications").show();
-            $("#reddit-row").hide();
-            $("#comments").show();
-            $("#youtubes").hide();
+            $("#pictures").show(1000);
+            $("#specifications").show(1000);
+            $("#reddit-row").hide(1000);
+            $("#comments").show(1000);
+            $("#youtubes").hide(1000);
         })
         $(document).on("click", "#redditBtn", function() {
             event.preventDefault();
-            $("#pictures").hide();
-            $("#specifications").hide();
-            $("#reddit-row").show();
-            $("#comments").hide();
-            $("#youtubes").hide();
+            $("#pictures").hide(1000);
+            $("#specifications").hide(1000);
+            $("#reddit-row").show(1000);
+            $("#comments").hide(1000);
+            $("#youtubes").hide(1000);
             $("#productBtn").removeClass("active");
         });
         $(document).on("click", "#youtubeBtn", function() {
             event.preventDefault();
-            $("#pictures").hide();
-            $("#specifications").hide();
-            $("#reddit-row").hide();
-            $("#comments").hide();
-            $("#youtubes").show();
+            $("#pictures").hide(1000);
+            $("#specifications").hide(1000);
+            $("#reddit-row").hide(1000);
+            $("#comments").hide(1000);
+            $("#youtubes").show(1000);
             $("#productBtn").removeClass("active");
         });
         
