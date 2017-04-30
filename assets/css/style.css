@@ -17,6 +17,24 @@ body {
 	border: 1px solid grey;
 }
 
+#logInThroughGoogle, #signUpThroughGoogle {
+	float: left;
+}
+
+#logInGoogleButton, #signUpGoogleButton {
+	cursor: pointer;
+}
+
+#logInGoogleButton:active, #signUpGoogleButton:active {
+	cursor: pointer;
+	content: url("../images/Googlebuttons/btn_google_signin_light_pressed_web.png");
+}
+
+#logInGoogleButton:focus, #signUpGoogleButton:focus {
+	cursor: pointer;
+	content: url("../images/Googlebuttons/btn_google_signin_light_focus_web.png");
+}
+
 #needAccount, #haveAccount {
 	float: left;
 }

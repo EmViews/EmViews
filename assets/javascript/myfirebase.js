@@ -29,7 +29,7 @@ $(document).ready(function() {
         });
     });
 
-    $('#logInGoogle').on('click', function() {
+    $('#logInGoogleButton').on('click', function() {
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider).then(function(result) {
             // This gives you a Google Access Token. You can use it to access the Google API.
@@ -64,7 +64,7 @@ $(document).ready(function() {
         });
     });
 
-    $('#signUpGoogle').on('click', function() {
+    $('#signUpGoogleButton').on('click', function() {
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider).then(function(result) {
             // This gives you a Google Access Token. You can use it to access the Google API.
