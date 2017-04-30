@@ -94,7 +94,8 @@ $(document).ready(function() {
             console.log('signed in');
             $('#logInModal').modal('hide');
             $('#signUpModal').modal('hide');
-            $('#authButtons').html(`<button id="logOut" type="button" class="btn btn-default navbar-btn navbar-right">Log Out</button>`);
+            $('#authButtons1').html(`<button id="logOut" type="button" class="btn btn-default navbar-btn navbar-right">Log Out</button>`);
+            $('#authButtons2').html(`<button id="logOut" type="button" class="btn btn-default navbar-btn navbar-right">Log Out</button>`);
         } else {
             // No user is signed in.
         }
@@ -104,10 +105,14 @@ $(document).ready(function() {
         firebase.auth().signOut().then(function() {
             // Sign-out successful.
             console.log('signed out');
-            $('#authButtons').html(`
+            $('#authButtons1').html(`
 				<button id="sign-up-button" type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
 	            <button id="sign-in-button" type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#logInModal">Log In</button>
         	`);
+            $('#authButtons2').html(`
+                <button id="sign-up-button" type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+                <button id="sign-in-button" type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#logInModal">Log In</button>
+            `);
         }).catch(function(error) {
             // An error happened.
             var errorCode = error.code;
