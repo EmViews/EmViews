@@ -4,7 +4,7 @@ function tplawesome(e, t) { res = e;
     return res }
 
 $(function() {
-    $(document).on("click", "#submit-button2", function() {
+    $(document).on("click", ".btn", function() {
         event.preventDefault();
         var request = gapi.client.youtube.search.list({
             part: "snippet",
