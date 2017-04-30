@@ -21,6 +21,7 @@ $(document).ready(function() {
 
             function getFunction() {
                 $.get(queryURL).done(function(response) {
+                    $("#reddit-results").empty();
                     var children = response.data.children;
                     // if(children[i].data.is_self === true)
                     for (var i = 0; i < children.length; i++) {
@@ -39,8 +40,35 @@ $(document).ready(function() {
                         $("#reddit-results").append(`<div class='reddit-results-div' id='${result}'><h4 class='reddit-result-title'><strong>Original Reddit Thread: <a href='https://www.reddit.com/${children[i].data.permalink}' target='_blank' class='reddit-results-link'>${children[i].data.title}</a></strong></h4><br><div class='reddit-result-body'>${decodedHTML}</div></div><br>`);
                         // ----------------Collapser Function ----------------------
                         $(".reddit-result-body").collapser({
+
+                                // target: 'next',
+                                // mode: 'lines',
+                                // speed: 'slow',
+                                // truncate: 3,
+                                // ellipsis: '...',
+                                // effect: 'fade',
+                                // controlBtn: 'dsfdsf',
+                                // showText: 'Show more',
+                                // hideText: 'Hide text',
+                                // showClass: 'show-class',
+                                // hideClass: 'hide-class',
+                                // atStart: 'hide',
+                                // lockHide: true,
+                                // dynamic: true,
+                                // changeText: true,
+                                // beforeShow: null,
+                                // afterShow: null,
+                                // beforeHide: null,
+                                // afterHide: null
                                 mode: 'lines',
-                                truncate: 3
+                                ellipsis: '...',
+                                effect: 'fade',
+                                showText: '<strong class="reddit-results-link">Show Entire Thread (Some threads may be very long)</strong>',
+                                hideText: '<strong class="reddit-results-link">Hide Thread</strong>',
+                                truncate: 3,
+                                lockHide: false,
+                                dynamic: true,
+                                changeText: true,
                             })
                             // -----------------END OF COLLAPSER FUNCTION---------------
                     }
