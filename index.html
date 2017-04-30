@@ -3,18 +3,20 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>EmViews</title>
     <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/6.0.0/normalize.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-	<script src="https://cdn.rawgit.com/vaakash/jquery-collapser/master/jquery.collapser.min.js"></script>
+    <script src="https://cdn.rawgit.com/vaakash/jquery-collapser/master/jquery.collapser.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
 </head>
 
 <body>
-    <!-- Initial search bar at start -->
-    <nav class="navbar navbar-default navbar-fixed-top" id="navbarStart">
+    <!-- This navBar appears in the middle at start,  Initial search bar  -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="navbar-start">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="index.html">
@@ -30,8 +32,8 @@
             <button type="button" class="btn btn-default navbar-btn navbar-right" id="sign-in-button">Sign in</button>
         </div>
     </nav>
-    <!-- after first search -->
-    <nav class="navbar navbar-default navbar-fixed-top" id="navbarTop">
+    <!-- This navBar appears at the top after search input-->
+    <nav class="navbar navbar-default navbar-fixed-top" id="navbar-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="index.html">
@@ -50,71 +52,74 @@
         </div>
     </nav>
     <div class="container-fluid">
-        <!-- The div search list on side bar -->
-        <div id="searchResultsFirst" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h2>Search Results</h2>
-            <div id="searchResult1">
-            <!--  searchResult1 is gonna list a bunch of stuff  -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa numquam maiores magnam corrupti veritatis. Nesciunt in iure eveniet distinctio alias labore, perferendis, dicta necessitatibus suscipit ducimus adipisci, aliquid odit doloribus.</p>
-            </div>
-        </div>
         <!-- The div search list on whole page -->
-        <div id="searchResultsSecond" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+        <div id="search-results-first" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <h2 class="headings">Search Results</h2>
-            <!-- searchResult2 is gonna list a bunch of stuff -->
-                        <div id="searchResult2">
+            <!--  search-result-1 is gonna list a bunch of stuff  -->
+            <div id="search-result-1">
+
             </div>
         </div>
-        <div id="mainBody" class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-9">
-            <div id="nameStars" class="row">
+        <!-- The div search list on side bar -->
+        <div id="search-results-second" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <h2 class="headings">Search Results</h2>
+            <!-- search-result-2 is gonna list a bunch of stuff -->
+            <div id="search-result-2">
+
+            </div>
+        </div>
+        <!-- Main body, three tabs of Product, Reddit, and Youtube -->
+        <div id="main-body" class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-9">
+            <div id="name-stars" class="row">
                 <div class="btn-group btn-group-justified" role="group" aria-label="...">
                     <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default active" id="productBtn">Product Info</button>
+                        <button type="button" class="btn btn-default active" id="product-btn">Product Info</button>
                     </div>
                     <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" id="redditBtn">Reddit Treads</button>
+                        <button type="button" class="btn btn-default" id="reddit-btn">Reddit Threads</button>
                     </div>
                     <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" id="youtubeBtn">YouTube Videos</button>
+                        <button type="button" class="btn btn-default" id="youtube-btn">YouTube Videos</button>
                     </div>
                 </div>
             </div>
-            <div id="pictureDiv" class="row">
+            <div id="picture-div" class="row">
                 <h2 class="headings">Pictures</h2>
                 <div id="input-images">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam nesciunt animi, dolores veniam modi voluptates rem inventore excepturi minus, quae. Minus possimus quisquam, voluptates odit culpa? Corporis, provident, aliquam!</p>
+                    <!-- insert image here from search-result.js -->
                 </div>
             </div>
-            <div id="specsDiv" class="row">
+            <div id="specs-div" class="row">
                 <h2 class="headings">Specifications</h2>
                 <div id="input-specs">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit soluta fugit nisi, doloribus unde ab. Voluptatem, architecto molestias repellat illo. Minus ad voluptates esse ipsam ducimus dolor dolore corporis suscipit.</p>
-                <div>
+                    <p id="description">
+                        <!-- insert description here from search-result.js -->
+                    </p>
+                </div>
             </div>
-            <div id="commentDiv" class="row">
+            <div id="comments" class="row">
                 <h2 class="headings">Comments</h2>
-                <!-- create comment box here -->
+                <!-- insert comments here -->
             </div>
             <div id="reddit-row" class="row">
                 <h2 class="headings">Reddit Threads</h2>
                 <div class="col-xl-12 col-lg-12 col-md-12 col-md-12 col-sm-12 col-xs-12" id="reddit-results">
+                <!-- insert Reddit thread here -->
                 </div>
             </div>
             <div id="youtubes" class="row">
                 <h2 class="headings">Youtube Videos</h2>
+                <!-- insert youtube here -->
             </div>
         </div>
     </div>
-    <!-- data.js calls json response1 -->
-        <script type="text/javascript" src="assets/javascript/data.js"></script>
-        <!-- search-result api -->
+    <!-- data.js is JSON format called by response1 for database, delete when done -->
+    <script type="text/javascript" src="assets/javascript/data.js"></script>
+    <!-- search-result api -->
     <script type="text/javascript" src="assets/javascript/search-result.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
-    <!-- Reddit search api -->
     <script type="text/javascript" src="assets/javascript/redditAPI.js"></script>
-    <!-- youtube search api -->
     <script type="text/javascript" src="assets/javascript/youtube.js"></script>
-
     <script src="https://apis.google.com/js/client.js?onload=init"></script>
 </body>
 
