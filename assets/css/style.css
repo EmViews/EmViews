@@ -21,16 +21,16 @@ body {
     padding-top: 25px;
 }
 
-#navbarTop {
+#navbar-top {
     display:none;
 }
-#searchResultsFirst{
+#search-results-first{
     display:none;
 }
-#searchResultsSecond{
+#search-results-second{
     display:none;
 }
-#mainBody {
+#main-body {
     display:none;
 }
 #videos {
