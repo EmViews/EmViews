@@ -116,4 +116,8 @@ body {
 	float: left;
 }
 
+#logOut {
+    margin-right: 2%;
+}
+
 /* end John's stuff... should be integrated into the rest of the css at some point */
