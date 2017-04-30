@@ -11,11 +11,13 @@ h1 {
 body {
     padding-top: 5%;
 }
-.search-item{
+
+.search-item {
     border-bottom: 1px solid gray;
 }
-.image-item{
-    height:200px;
+
+.image-item {
+    height: 200px;
     width: 200px;
 }
 
@@ -31,24 +33,32 @@ body {
 #navbar-top {
     display: none;
 }
+
 #search-results-first {
     display: none;
 }
+
 #search-results-second {
     display: none;
 }
+
 #main-body {
     display: none;
 }
+
 #videos {
     display: none;
 }
+
 #reddit-row {
     display: none;
 }
+
 #youtubes {
     display: none;
 }
+
+
 /*#product-input-start {
     width: 600px;
 }*/
@@ -91,33 +101,47 @@ body {
 }
 
 
-
 /* John's stuff... should be integrated into the rest of the css at some point */
 
-#logInThroughGoogle, #signUpThroughGoogle {
-	float: left;
+#logInThroughGoogle,
+#signUpThroughGoogle {
+    float: left;
 }
 
-#logInGoogleButton, #signUpGoogleButton {
-	cursor: pointer;
+#logInGoogleButton,
+#signUpGoogleButton {
+    cursor: pointer;
 }
 
-#logInGoogleButton:active, #signUpGoogleButton:active {
-	cursor: pointer;
-	content: url("../images/Googlebuttons/btn_google_signin_light_pressed_web.png");
+#logInGoogleButton:active,
+#signUpGoogleButton:active {
+    cursor: pointer;
+    content: url("../images/Googlebuttons/btn_google_signin_light_pressed_web.png");
 }
 
-#logInGoogleButton:focus, #signUpGoogleButton:focus {
-	cursor: pointer;
-	content: url("../images/Googlebuttons/btn_google_signin_light_focus_web.png");
+#logInGoogleButton:focus,
+#signUpGoogleButton:focus {
+    cursor: pointer;
+    content: url("../images/Googlebuttons/btn_google_signin_light_focus_web.png");
 }
 
-#needAccount, #haveAccount {
-	float: left;
+#needAccount,
+#haveAccount {
+    float: left;
 }
 
 #logOut {
     margin-right: 2%;
 }
 
+
 /* end John's stuff... should be integrated into the rest of the css at some point */
+
+
+/* youtube videos styling */
+
+.video {
+    border-radius: 25px;
+    border: 2px solid #336699;
+    padding: 20px;
+}
