@@ -13,13 +13,13 @@ $(document).ready(function() {
         // -----------------END OF FIREBASE KEY------------------
 
         // UI modification
-        $("#navbar-top").hide();
-        $("#search-results-first").hide();
-        $("#search-results-second").hide();
-        $("#main-body").hide();
-        $("#videos").hide();
-        $("#reddit-row").hide();
-        $("#youtubes").hide();
+        // $("#navbar-top").hide();
+        // $("#search-results-first").hide();
+        // $("#search-results-second").hide();
+        // $("#main-body").hide();
+        // $("#videos").hide();
+        // $("#reddit-row").hide();
+        // $("#youtubes").hide();
 
         $(document).on('click', "#submit-button2", function() {
             $("#navbar-start").hide(1000);
