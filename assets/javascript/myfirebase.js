@@ -105,8 +105,8 @@ $(document).ready(function() {
             // Sign-out successful.
             console.log('signed out');
             $('#authButtons').html(`
-				<button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
-	            <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#logInModal">Log In</button>
+				<button id="sign-up-button" type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+	            <button id="sign-in-button" type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#logInModal">Log In</button>
         	`);
         }).catch(function(error) {
             // An error happened.
