@@ -29,8 +29,10 @@
                 </div>
                 <button type="submit" class="btn btn-default" id="submit-button2">Submit</button>
             </form>
-            <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#signUp">Sign Up</button>
-            <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#logIn">Log In</button>
+            <div id=authButtons>
+            	<button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+            	<button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#logInModal">Log In</button>
+            </div>
         </div>
     </nav>
 
@@ -50,8 +52,10 @@
                 </div>
                 <button type="submit" class="btn btn-default" id="submit-button1">Submit</button>
             </form>
-            <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#signUp">Sign Up</button>
-            <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#logIn">Log In</button>
+            <div id=authButtons>
+            	<button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+            	<button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#logInModal">Log In</button>
+            </div>
         </div>
     </nav>
     <div class="container-fluid">
@@ -100,7 +104,7 @@
     </div>
 
     <!-- Log In modal -->
-    <div class="modal fade" id="logIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -108,7 +112,7 @@
                     <h4 class="modal-title" id="myModalLabel">Log In</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Have an account? Log in with e-mail to play!</p>
+                    <p>Already have an account? Log in with e-mail to play!</p>
                     <form class="form-horizontal">
                         <div class="form-group">
                             <label for="logInEmail" class="col-sm-2 control-label">Email</label>
@@ -133,13 +137,14 @@
                         </div> -->
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button id="logInSubmit" type="submit" class="btn btn-default">Log in</button>
+                                <button id="logInLogIn" type="submit" class="btn btn-default">Log in</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                             </div>
                         </div>
                     </form>
                     <hr>
-                    <p>Have an account? Log in with Google to play!</p>
+                    <p>Already have an account? Log in with Google to play!</p>
+                    <img id="logInGoogle" src="assets/images/Googlebuttons/btn_google_signin_light_normal_web.png">
                     <hr>
                     <p id="needAccount">Need an account? Register to play!</p>&nbsp
                     <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#signUp">Sign Up</button>
@@ -149,7 +154,7 @@
     </div>
     <!-- end Log In modal -->
     <!-- Sign Up modal -->
-    <div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -188,15 +193,16 @@
                         </div> -->
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button id="signUpSubmit" type="submit" class="btn btn-default">Sign Up</button>
+                                <button id="signUpLogIn" type="submit" class="btn btn-default">Sign Up</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                             </div>
                         </div>
                     </form>
                     <hr>
 					<p>Need an account? Register with Google to play!</p>
+					<img id="signUpGoogle" src="assets/images/Googlebuttons/btn_google_signin_light_normal_web.png">
                     <hr>
-                    <p id="haveAccount">Have an account? Log In to play!</p>&nbsp
+                    <p id="haveAccount">Already have an account? Log in to play!</p>&nbsp
                     <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#logIn">Log In</button>
 				</div>
             </div>
