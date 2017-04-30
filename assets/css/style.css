@@ -89,3 +89,31 @@ body {
     transition: color .5s;
     color: #FF4500;
 }
+
+
+
+/* John's stuff... should be integrated into the rest of the css at some point */
+
+#logInThroughGoogle, #signUpThroughGoogle {
+	float: left;
+}
+
+#logInGoogleButton, #signUpGoogleButton {
+	cursor: pointer;
+}
+
+#logInGoogleButton:active, #signUpGoogleButton:active {
+	cursor: pointer;
+	content: url("../images/Googlebuttons/btn_google_signin_light_pressed_web.png");
+}
+
+#logInGoogleButton:focus, #signUpGoogleButton:focus {
+	cursor: pointer;
+	content: url("../images/Googlebuttons/btn_google_signin_light_focus_web.png");
+}
+
+#needAccount, #haveAccount {
+	float: left;
+}
+
+/* end John's stuff... should be integrated into the rest of the css at some point */
