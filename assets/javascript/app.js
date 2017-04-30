@@ -46,7 +46,7 @@ $(document).ready(function() {
             event.preventDefault();
             $("#picture-div").hide(1000);
             $("#specs-div").hide(1000);
-            $("#reddit-row").show(750);
+            $("#reddit-row").show(1000);
             $("#comments").hide(1000);
             $("#youtubes").hide(750);
             $("#product-btn").removeClass("active");
@@ -59,7 +59,7 @@ $(document).ready(function() {
             $("#specs-div").hide(1000);
             $("#reddit-row").hide(750);
             $("#comments").hide(1000);
-            $("#youtubes").show(900);
+            $("#youtubes").show(1000);
             $("#product-btn").removeClass("active");
             $("#reddit-btn").removeClass("active")
             $("#youtube-btn").addClass("active");
