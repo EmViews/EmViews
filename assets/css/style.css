@@ -11,6 +11,9 @@ h1 {
 body {
     padding-top: 5%;
 }
+.search-item{
+    border-bottom: 1px solid gray;
+}
 
 #navbar-start {
     position: absolute;

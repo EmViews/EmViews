@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="zDyBGU18pZQmVH1na1RehIYQbqWjnsAJE67MUpxP3yg" />
+
     <title>EmViews</title>
     <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/6.0.0/normalize.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <!-- Initial search bar at start -->
+    <!-- This navBar appears in the middle at start,  Initial search bar  -->
     <nav class="navbar navbar-default navbar-fixed-top" id="navbar-start">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -32,7 +32,7 @@
             <button type="button" class="btn btn-default navbar-btn navbar-right" id="sign-in-button">Sign in</button>
         </div>
     </nav>
-    <!-- after first search -->
+    <!-- This navBar appears at the top after search input-->
     <nav class="navbar navbar-default navbar-fixed-top" id="navbar-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -57,7 +57,7 @@
             <h2 class="headings">Search Results</h2>
             <!--  search-result-1 is gonna list a bunch of stuff  -->
             <div id="search-result-1">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam nesciunt animi, dolores veniam modi voluptates rem inventore excepturi minus, quae. Minus possimus quisquam, voluptates odit culpa? Corporis, provident, aliquam!</p>
+
             </div>
         </div>
         <!-- The div search list on side bar -->
@@ -65,9 +65,10 @@
             <h2 class="headings">Search Results</h2>
             <!-- search-result-2 is gonna list a bunch of stuff -->
             <div id="search-result-2">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam nesciunt animi, dolores veniam modi voluptates rem inventore excepturi minus, quae. Minus possimus quisquam, voluptates odit culpa? Corporis, provident, aliquam!</p>
+
             </div>
         </div>
+        <!-- Main body, three tabs of Product, Reddit, and Youtube -->
         <div id="main-body" class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-9">
             <div id="name-stars" class="row">
                 <div class="btn-group btn-group-justified" role="group" aria-label="...">
@@ -85,28 +86,34 @@
             <div id="picture-div" class="row">
                 <h2 class="headings">Pictures</h2>
                 <div id="input-images">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam nesciunt animi, dolores veniam modi voluptates rem inventore excepturi minus, quae. Minus possimus quisquam, voluptates odit culpa? Corporis, provident, aliquam!</p>
+                    <!-- insert image here from search-result.js -->
                 </div>
             </div>
             <div id="specs-div" class="row">
                 <h2 class="headings">Specifications</h2>
                 <div id="input-specs">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit soluta fugit nisi, doloribus unde ab. Voluptatem, architecto molestias repellat illo. Minus ad voluptates esse ipsam ducimus dolor dolore corporis suscipit.</p>
+                    <p id="description">
+                        <!-- insert description here from search-result.js -->
+                    </p>
                 </div>
             </div>
             <div id="comments" class="row">
                 <h2 class="headings">Comments</h2>
+                <!-- insert comments here -->
             </div>
             <div id="reddit-row" class="row">
                 <h2 class="headings">Reddit Threads</h2>
                 <div class="col-xl-12 col-lg-12 col-md-12 col-md-12 col-sm-12 col-xs-12" id="reddit-results">
+                <!-- insert Reddit thread here -->
                 </div>
             </div>
             <div id="youtubes" class="row">
                 <h2 class="headings">Youtube Videos</h2>
+                <!-- insert youtube here -->
             </div>
         </div>
     </div>
+    <!-- data.js is JSON format called by response1 for database, delete when done -->
     <script type="text/javascript" src="assets/javascript/data.js"></script>
     <!-- search-result api -->
     <script type="text/javascript" src="assets/javascript/search-result.js"></script>
