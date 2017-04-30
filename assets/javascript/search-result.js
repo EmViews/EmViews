@@ -3,11 +3,12 @@ $(document).ready(function() {
     // calling this json object from data.js
     console.log(response1);
 
-    $(document).on("click", ".search-button", function(event) {
+    $(document).on("click", ".search-button", function() {
         event.preventDefault();
         //empty out the product-input
         $("#product-input").empty();
-
+        $("#search-result-2").empty();
+        $("#search-result-1").empty();
         //Submit btn click, searches goes to Ajax to search
 
         //var productQuery = "nintendo switch";
@@ -22,52 +23,68 @@ $(document).ready(function() {
         for (var i = 0; i < response1.items.length; i++) {
             //need to grab UPC, image, title
             //searchItem div have Title link,
-            var searchItem = $("<div class='searchItem' id='item'>");
+            var searchItem = $("<div class='search-item' id='item'>");
 
             //create div with Class titleItem, with title,upc, ean, and value attributes
-            var title = $("<div class='titleItem canClick'>").html("<h4>" + response1.items[i].title + "</h4>");
+            var title = $("<div class='title-item canClick'>").html("<h4>" + response1.items[i].title + "</h4>");
             // console.log(title)
             title.attr("title", response1.items[i].title);
             title.attr("upc", response1.items[i].upc);
             title.attr("ean", response1.items[i].ean);
             title.attr("value", i);
+            $('.title-item').css('cursor', 'pointer');
+
 
             //create div with Class imageItem and canClick, with title, upc, ean, and value attributes
-            var image = $("<img class='imageItem canClick'>").attr("src", response1.items[i].images[0]);
+            var image = $("<img class='image-item canClick'>").attr("src", response1.items[i].images[0]);
             image.attr("title", response1.items[i].title);
             image.attr("upc", response1.items[i].upc);
             image.attr("ean", response1.items[i].ean);
             image.attr("value", i);
+            $('.image-item').css('cursor', 'pointer');
 
             console.log(response1.items[i].ean);
             //adding all the variables together
             searchItem.append(image).append(title);
-            $("#search-result-1").append(searchItem);
-            $("#search-result-2").append(searchItem);
+
+            searchItem.appendTo("#search-result-1, #search-result-2");
+
+                // $("#search-result-1").append(searchItem);
+                // $("#search-result-2").append(searchItem2);
         }
 
+        //when click any of the image or title... 
         $(document).on("click", ".canClick", function() {
 
-            $("#input-images").empty();
-            $("#input-specs").empty();
             //gets value for index when "this" item is clicked
             var index = $(this).attr("value");
 
-            //create div with Class imageItem, with title, upc, ean, and value attributes
-            var imageBox = $("<img class='imageBox'>").attr("src", response1.items[index].images[0]);
-            $("#input-images").append(imageBox);
-
-
-            //when i click any of the image or title, i get the upc/ean
-            $("#input-specs").html(response1.items[index].description);
-
-            if ($(this).attr("upc") == null || $(this).attr("upc") == "") {
-                console.log("I got ean");
-                code = $(this).attr("ean");
+            //first empties and return new images, if not empty object
+            $("#input-images").empty();
+            if (response1.items[index].images[0] == null || response1.items[index].images[0] == "") {
+                $("#description").html("Womp Womp..no pretty picture here.. :'(");
             } else {
-                console.log("I got upc");
-                code = $(this).attr("upc");
+                var imageBox = $("<img class='imageBox'>").attr("src", response1.items[index].images[0]);
+                $("#input-images").append(imageBox);
             }
+
+            //first empties and return new description, if not empty object
+            $("#description").empty();
+            if (response1.items[index].description == null || response1.items[index].description == "") {
+
+                $("#description").html("Womp Womp..no descriptions here.. :'(");
+            } else {
+
+                $("#description").html(response1.items[index].description);
+            }
+
+            // if ($(this).attr("upc") == null || $(this).attr("upc") == "") {
+            //     console.log("I got ean");
+            //     code = $(this).attr("ean");
+            // } else {
+            //     console.log("I got upc");
+            //     code = $(this).attr("upc");
+            // }
         });
         // });
 
