@@ -26,6 +26,7 @@ $(document).ready(function() {
 
             //create div with Class titleItem, with title,upc, ean, and value attributes
             var title = $("<div class='titleItem canClick'>").html("<h4>" + response1.items[i].title + "</h4>");
+            // console.log(title)
             title.attr("title", response1.items[i].title);
             title.attr("upc", response1.items[i].upc);
             title.attr("ean", response1.items[i].ean);
@@ -41,9 +42,8 @@ $(document).ready(function() {
             console.log(response1.items[i].ean);
             //adding all the variables together
             searchItem.append(image).append(title);
-
-            $("#searchResult1").append(searchItem);
-            $("#searchResult2").append(searchItem);
+            $("#search-result-1").append(searchItem);
+            $("#search-result-2").append(searchItem);
         }
 
         $(document).on("click", ".canClick", function() {
