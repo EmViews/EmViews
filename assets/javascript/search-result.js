@@ -3,11 +3,12 @@ $(document).ready(function() {
     // calling this json object from data.js
     console.log(response1);
 
-    $(document).on("click", ".search-button", function(event) {
+    $(document).on("click", ".search-button", function() {
         event.preventDefault();
         //empty out the product-input
         $("#product-input").empty();
-
+        $("#search-result-2").empty();
+        $("#search-result-1").empty();
         //Submit btn click, searches goes to Ajax to search
 
         //var productQuery = "nintendo switch";
@@ -54,8 +55,6 @@ $(document).ready(function() {
 
         //when click any of the image or title... 
         $(document).on("click", ".canClick", function() {
-
-
 
             //gets value for index when "this" item is clicked
             var index = $(this).attr("value");
