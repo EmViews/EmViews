@@ -100,9 +100,10 @@ $(document).ready(function() {
         }
     });
 
-    $('#logOut').on('click', function() {
+    $(document).on('click', '#logOut', function() {
         firebase.auth().signOut().then(function() {
             // Sign-out successful.
+            console.log('signed out');
             $('#authButtons').html(`
 				<button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
 	            <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#logInModal">Log In</button>
