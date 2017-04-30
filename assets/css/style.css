@@ -21,6 +21,27 @@ body {
     padding-top: 25px;
 }
 
+#navbar-top {
+    display:none;
+}
+#search-results-first{
+    display:none;
+}
+#search-results-second{
+    display:none;
+}
+#main-body {
+    display:none;
+}
+#videos {
+    display:none;
+}
+#reddit-row{
+    display:none;
+}
+#youtubes{
+    display:none;
+}
 
 /*#product-input-start {
     width: 600px;
