@@ -42,8 +42,10 @@ $(document).ready(function() {
             console.log(response1.items[i].ean);
             //adding all the variables together
             searchItem.append(image).append(title);
-            $("#search-result-1").append(searchItem);
-            $("#search-result-2").append(searchItem);
+            
+            $(searchItem).appendTo("#search-result-1, #search-result-2")
+            // $("#search-result-1").append(searchItem);
+            // $("#search-result-2").append(searchItem2);
         }
 
         $(document).on("click", ".canClick", function() {
