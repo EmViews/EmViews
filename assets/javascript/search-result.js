@@ -23,7 +23,8 @@ $(document).ready(function() {
         for (var i = 0; i < response1.items.length; i++) {
             //need to grab UPC, image, title
             //searchItem div have Title link,
-            var searchItem = $("<div class='search-item' id='item'>");
+            
+            var searchItem = $("<div class='search-item col-lg-3' id='item'>");
 
             //create div with Class titleItem, with title,upc, ean, and value attributes
             var title = $("<div class='title-item canClick'>").html("<h4>" + response1.items[i].title + "</h4>");
@@ -48,7 +49,7 @@ $(document).ready(function() {
             searchItem.append(image).append(title);
 
             searchItem.appendTo("#search-result-1, #search-result-2");
-
+            $("#search-result-2").children().removeClass("col-lg-3");
                 // $("#search-result-1").append(searchItem);
                 // $("#search-result-2").append(searchItem2);
         }

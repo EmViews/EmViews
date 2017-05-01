@@ -144,6 +144,8 @@ body {
     border-radius: 25px;
     border: 2px solid #336699;
     padding: 20px;
+    display: block;
+    margin: 0 auto;
 }
 
 .search-item {
