@@ -8,9 +8,7 @@ h1 {
     font-family: 'Righteous', cursive;
 }
 
-body {
-
-}
+body {}
 
 .image-item {
     height: 200px;
@@ -25,6 +23,7 @@ body {
     margin: auto;
     padding-top: 25px;
 }
+
 
 /*#navbar-top {
     display: none;
@@ -61,12 +60,12 @@ body {
 }*/
 
 #product-input {
-    width: 600px;
+    width: 30em;
 }
 
 #sign-up-button {
     margin-right: 2%;
-    margin-left:1%;
+    margin-left: 1%;
 }
 
 .headings {
@@ -99,7 +98,7 @@ body {
 }
 
 
-/* John's stuff... should be integrated into the rest of the css at some point */
+/* userAuth Google styling */
 
 #logInThroughGoogle,
 #signUpThroughGoogle {
@@ -133,9 +132,6 @@ body {
 }
 
 
-/* end John's stuff... should be integrated into the rest of the css at some point */
-
-
 /* youtube videos styling */
 
 .video {
@@ -146,7 +142,9 @@ body {
     margin: 0 auto;
 }
 
+
 /*search-result.js styling */
+
 .search-item {
     margin: 1%;
     border-radius: 15px;
@@ -155,8 +153,8 @@ body {
     text-align: center;
     height: 300px;
     width: 300px;
-
 }
+
 .img-item {
     margin: 0 auto;
 }
@@ -165,6 +163,32 @@ body {
     display: block;
     margin: 0 auto;
 }
-#description{
+
+#description {
     text-align: center;
+}
+
+#items > h3 {
+    text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+    #navbar-start {
+        position: absolute;
+        top: 15%;
+        height: 300px;
+    }
+    #product-input {
+        width: 80%;
+        display: box;
+        margin: 0 auto;
+    }
+    .navbar-brand > h1 {
+        text-align: center;
+        margin: 0 auto;
+    }
+    #submit-button2 {
+        display: box;
+        margin: 0 auto;
+    }
 }
