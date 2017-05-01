@@ -160,11 +160,19 @@ body {
 .img-item {
     margin: 0 auto;
 }
-
+#primary-image{
+    height:250px;
+    width: 250px;    
+}
+#secondary-image{
+    height:150px;
+    width: 150px;
+}
 .imageBox {
     display: block;
-    margin: 0 auto;
+    margin: auto;
 }
 #description{
-    text-align: center;
+    text-align: left;
+
 }

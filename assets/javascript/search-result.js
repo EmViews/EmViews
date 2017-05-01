@@ -12,9 +12,15 @@ $(document).ready(function() {
         $("#search-result-1").empty();
         //Submit btn click, searches goes to Ajax to search
 
+        var APIKey = "b7zex42y8vhz2wr56d8jwq5y";
         var productQuery = $("#product-input").val().trim().replace(/ /g, "+");
+        var sort= "relevance";
+        var categoryId;
         console.log("You submitted: " + productQuery);
-        var querySearch = "https://api.upcitemdb.com/prod/trial/search?s=" + productQuery + "&match_mode=0&type=product";
+        var querySearch = 
+        //"http://api.walmartlabs.com/v1/search?apiKey=" +APIKey +"&query="+productQuery+ "&responseGroup=full";
+        "http://api.walmartlabs.com/v1/search?apiKey=b7zex42y8vhz2wr56d8jwq5y&query=overwatch&responseGroup=full";
+
         $.ajax({
                 url: querySearch,
                 method: "GET"
@@ -29,15 +35,15 @@ $(document).ready(function() {
                     //searchItem div have Title link,
                     var searchItem = $("<div class='search-item col-lg-3' id='item'>");
 
-                    //create div with Class titleItem, with title,upc, ean, and value attributes
-                    var title = $("<div class='title-item canClick'>").html("<h4>" + response.items[i].title + "</h4>");
-                    title.attr("title", response.items[i].title);
+                    //create div with Class titleItem, with title,upc, ean, and value attributes,value is used for indexing
+                    var title = $("<div class='title-item canClick'>").html("<h4>" + response.items[i].name + "</h4>");
+                    title.attr("title", response.items[i].name);
                     title.attr("value", i);
                     $('.title-item').css('cursor', 'pointer');
 
-                    //create div with Class imageItem and canClick, with title, upc, ean, and value attributes
-                    var image = $("<img class='image-item canClick'>").attr("src", response.items[i].images[0]);
-                    image.attr("title", response.items[i].title);
+                    //create div with Class imageItem and canClick, with title, upc, ean, and value attributes, value is used for indexing
+                    var image = $("<img class='image-item canClick'>").attr("src", response.items[i].largeImage);
+                    image.attr("title", response.items[i].name);
                     image.attr("value", i);
                     $('.image-item').css('cursor', 'pointer');
 
@@ -58,37 +64,47 @@ $(document).ready(function() {
 
                     //first empties and return new images, if not empty object
                     $("#input-images").empty();
-                    if (response.items[index].images[0] == null || response.items[index].images[0] == "") {
-                        $("#description").html("Womp Womp..no pretty picture here.. :'(");
-                    } else {
-                        var imageBox = $("<img class='imageBox'>").attr("src", response.items[index].images[0]);
-                        $("#input-images").append(imageBox);
+                    if (response.items[index].largeImage == null || response.items[index].largeImage == "") {
+                        $("#input-images").html("Womp Womp..no pretty picture here.. :'(");
+                    } 
+                    //prepends primary images and appends secondary images by for loop
+                    else {
+                        var imageBox = $("<img class='imageBox' id='primary-image'>").attr("src", response.items[index].largeImage);
+                        $("#input-images").prepend(imageBox);
+
+                        for (var i =0; i < response.items[index].imageEntities.length; i++){
+                            console.log("response.items[index].imageEntities[i].entityType")
+                            if (response.items[index].imageEntities[i].entityType == "SECONDARY"){
+                                var imageBox2 = $("<img class='imageBox' id='secondary-image'>").attr("src", response.items[index].imageEntities[i].largeImage);
+
+                                $("#input-images").append(imageBox2);
+                            }
+                        }
                     }
 
                     //first empties and return new description, if not empty object
                     $("#description").empty();
-                    if (response.items[index].description == null || response.items[index].description == "") {
+                    if (response.items[index].longDescription == null || response.items[index].longDescription == "") {
 
                         $("#description").html("Womp Womp..no descriptions here.. :'(");
                     } else {
+                        // var formattedHTML = response.items[index].longDescription;
+                        // var stringHTML = JSON.stringify(formattedHTML);
+                        var decodedHTML = decodeHtml(response.items[index].longDescription);
 
-                        $("#description").html(response.items[index].description);
+                        $("#description").prepend(decodedHTML);
                     }
-
-                    // if ($(this).attr("upc") == null || $(this).attr("upc") == "") {
-                    //     console.log("I got ean");
-                    //     code = $(this).attr("ean");
-                    // } else {
-                    //     console.log("I got upc");
-                    //     code = $(this).attr("upc");
-                    // }
                 });
             })
             .fail(function() {
                 //say something like search is invalid here
                 console.log("Submit error")
-                alert("You failed");
+                alert("You didn't get anything");
             });
     });
 
 });
+
+//add long and short descriptions
+//add specs table
+//add comments
