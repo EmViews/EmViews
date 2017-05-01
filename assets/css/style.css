@@ -166,3 +166,6 @@ body {
 #description{
     text-align: center;
 }
+#items > h3 {
+	text-align: center;
+}
