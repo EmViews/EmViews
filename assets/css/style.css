@@ -2,33 +2,44 @@
     box-sizing: border-box;
 }
 
-h1 {
+#main-logo {
+	position: absolute;
+	/*margin-top: 10%;*/
+	top: 10%;
+	margin-left: 35%;
+	font-family: 'Righteous', cursive;
+	text-align: center;
+	font-size: 80pt;
+}
+
+#header-top {
     margin: 0;
     margin-top: -6%;
     font-family: 'Righteous', cursive;
-}
-
-body {
-
-}
-
-.image-item {
-    height: 200px;
-    width: 200px;
 }
 
 #navbar-start {
     position: absolute;
     top: 40%;
     border: 1px solid grey;
-    height: 100px;
+    height: 90px;
     margin: auto;
     padding-top: 25px;
 }
 
-/*#navbar-top {
+#product-input {
+    width: 30em;
+}
+
+#sign-up-button {
+    margin-right: 2%;
+    margin-left: 1%;
+}
+
+#main-body {
     display: none;
-}*/
+    margin-top: 10px;
+}
 
 #search-results-first {
     display: none;
@@ -38,10 +49,43 @@ body {
     display: none;
 }
 
-#main-body {
-    display: none;
-    margin-top: 10px;
+.image-item {
+    height: 200px;
+    width: 200px;
 }
+
+
+/*search-result.js styling */
+
+.search-item {
+    margin: 1%;
+    border-radius: 15px;
+    border: 2px solid #336699;
+    padding: 10px;
+    text-align: center;
+    height: 300px;
+    width: 300px;
+}
+
+.img-item {
+    margin: 0 auto;
+}
+
+.imageBox {
+    display: block;
+    margin: 0 auto;
+}
+
+#description {
+    text-align: left;
+}
+
+#items > h3 {
+    text-align: center;
+}
+
+
+/* Divs are displaying nothing so we can dynamically populate them  */
 
 #videos {
     display: none;
@@ -55,19 +99,6 @@ body {
     display: none;
 }
 
-
-/*#product-input-start {
-    width: 600px;
-}*/
-
-#product-input {
-    width: 600px;
-}
-
-#sign-up-button {
-    margin-right: 2%;
-    margin-left:1%;
-}
 
 .headings {
     /*margin-left: 30px;*/
@@ -98,8 +129,17 @@ body {
     color: #FF4500;
 }
 
+/* youtube videos styling */
 
-/* John's stuff... should be integrated into the rest of the css at some point */
+.video {
+    border-radius: 25px;
+    border: 2px solid #336699;
+    padding: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* userAuth Google styling */
 
 #logInThroughGoogle,
 #signUpThroughGoogle {
@@ -138,28 +178,7 @@ body {
 
 /* youtube videos styling */
 
-.video {
-    border-radius: 25px;
-    border: 2px solid #336699;
-    padding: 20px;
-    display: block;
-    margin: 0 auto;
-}
 
-/*search-result.js styling */
-.search-item {
-    margin: 1%;
-    border-radius: 15px;
-    border: 2px solid #336699;
-    padding: 10px;
-    text-align: center;
-    height: 300px;
-    width: 300px;
-
-}
-.img-item {
-    margin: 0 auto;
-}
 #primary-image{
     height:250px;
     width: 250px;    
@@ -168,11 +187,25 @@ body {
     height:150px;
     width: 150px;
 }
-.imageBox {
-    display: block;
-    margin: auto;
-}
-#description{
-    text-align: left;
 
+@media only screen and (max-width: 800px) {
+    #navbar-start {
+        position: absolute;
+        top: 15%;
+        height: 300px;
+    }
+    #product-input {
+        width: 80%;
+        display: box;
+        margin: 0 auto;
+    }
+    .navbar-brand > h1 {
+        text-align: center;
+        margin: 0 auto;
+    }
+    #submit-button2 {
+        display: box;
+        margin: 0 auto;
+    }
 }
+

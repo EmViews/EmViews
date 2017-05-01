@@ -1,4 +1,5 @@
 //If your confuse only edit this serach-result.js :)
+ var productQuery;
 $(document).ready(function() {
 
     // calling this json object from data.js
@@ -27,8 +28,8 @@ $(document).ready(function() {
             })
             .done(function(response) {
                 //check I receive a return
-                console.log("Calling response:");
-                console.log(response);
+                // console.log("Calling response:");
+                // console.log(response);
 
                 for (var i = 0; i < response.items.length; i++) {
                     //need to grab UPC, image, title
@@ -98,8 +99,9 @@ $(document).ready(function() {
             })
             .fail(function() {
                 //say something like search is invalid here
+
                 console.log("Submit error")
-                alert("You didn't get anything");
+
             });
     });
 
