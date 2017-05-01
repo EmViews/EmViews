@@ -12,10 +12,6 @@ body {
     padding-top: 5%;
 }
 
-.search-item {
-    border-bottom: 1px solid gray;
-}
-
 .image-item {
     height: 200px;
     width: 200px;
@@ -148,12 +144,16 @@ body {
     margin: 0 auto;
 }
 
+/*search-result.js styling */
 .search-item {
-    margin: 0 auto;
-    border-radius: 25px;
+    margin: 1%;
+    border-radius: 15px;
     border: 2px solid #336699;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
+    height: 300px;
+    width: 300px;
+
 }
 .img-item {
     margin: 0 auto;
