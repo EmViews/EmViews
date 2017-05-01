@@ -1,3 +1,10 @@
+// function that decodes ASCII to HTML:
+function decodeHtml(html) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+}
+
 $(document).ready(function() {
         // ------------------REDDIT API--------------------------
 
@@ -9,13 +16,6 @@ $(document).ready(function() {
             var searchQuery = $("#product-input").val().trim().replace(/ /g, "+");
             var limit = 10;
             var queryURL = "https://www.reddit.com/search.json?q=title:" + searchQuery + "+title:review&limit=" + limit + "&sort=hot"
-
-            // function that decodes ASCII to HTML:
-            function decodeHtml(html) {
-                var txt = document.createElement("textarea");
-                txt.innerHTML = html;
-                return txt.value;
-            };
 
             getFunction();
 
