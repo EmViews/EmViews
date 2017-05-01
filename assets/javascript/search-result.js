@@ -14,13 +14,14 @@ $(document).ready(function() {
         //Submit btn click, searches goes to Ajax to search
 
         var APIKey = "b7zex42y8vhz2wr56d8jwq5y";
-        var productQuery = $("#product-input").val().trim().replace(/ /g, "+");
+        productQuery = $("#product-input").val().trim()
+        // .replace(/ /g, "+");
         var sort= "relevance";
         var categoryId;
         console.log("You submitted: " + productQuery);
         var querySearch = 
-        //"http://api.walmartlabs.com/v1/search?apiKey=" +APIKey +"&query="+productQuery+ "&responseGroup=full";
-        "http://api.walmartlabs.com/v1/search?apiKey=b7zex42y8vhz2wr56d8jwq5y&query=overwatch&responseGroup=full";
+        "http://api.walmartlabs.com/v1/search?apiKey=" +APIKey +"&query="+productQuery+ "&responseGroup=full";
+        // "http://api.walmartlabs.com/v1/search?apiKey=b7zex42y8vhz2wr56d8jwq5y&query=overwatch&responseGroup=full";
 
         $.ajax({
                 url: querySearch,
