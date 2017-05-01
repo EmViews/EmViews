@@ -10,9 +10,23 @@ $(document).ready(function() {
         // $("#youtubes").hide();
 
         $(document).on('click', "#submit-button2", function() {
-            $("#navbar-start").hide(1000);
-            $("#navbar-top").show(1000);
+            event.preventDefault();
+            //$("#navbar-start").hide(1000);
+            //$("#navbar-top").show(1000);
+            $("#search-results-second").hide(1000);
+            $("#main-body").hide(750);
+            $("#videos").hide(750);
             $("#search-results-first").show(1000);
+
+            $("#navbar-start").animate({ top: "0px" }, "easing");
+            $("#navbar-start").css({
+                "position": "relative",
+                "border": "1px solid grey",
+                "height": "100px",
+                "margin": "auto",
+                "padding-top": "25px",
+                });
+
         });
 
         $(document).on('click', '#search-results-first', function() {
@@ -23,13 +37,13 @@ $(document).ready(function() {
             $("#videos").show(1000);
         });
 
-        $(document).on('click', '#submit-button1', function() {
-            event.preventDefault();
-            $("#search-results-second").hide(1000);
-            $("#main-body").hide(750);
-            $("#videos").hide(750);
-            $("#search-results-first").show(1000);
-        });
+        // $(document).on('click', '#submit-button1', function() {
+        //     event.preventDefault();
+        //     $("#search-results-second").hide(1000);
+        //     $("#main-body").hide(750);
+        //     $("#videos").hide(750);
+        //     $("#search-results-first").show(1000);
+        // });
         $(document).on("click", "#product-btn", function() {
 
             event.preventDefault();

@@ -9,7 +9,7 @@ h1 {
 }
 
 body {
-    padding-top: 5%;
+
 }
 
 .image-item {
@@ -26,9 +26,9 @@ body {
     padding-top: 25px;
 }
 
-#navbar-top {
+/*#navbar-top {
     display: none;
-}
+}*/
 
 #search-results-first {
     display: none;
@@ -40,6 +40,7 @@ body {
 
 #main-body {
     display: none;
+    margin-top: 10px;
 }
 
 #videos {
@@ -65,6 +66,7 @@ body {
 
 #sign-up-button {
     margin-right: 2%;
+    margin-left:1%;
 }
 
 .headings {
