@@ -99,7 +99,7 @@ body {
 }
 
 
-/* John's stuff... should be integrated into the rest of the css at some point */
+/* userAuth Google styling */
 
 #logInThroughGoogle,
 #signUpThroughGoogle {
@@ -131,10 +131,6 @@ body {
 #logOut {
     margin-right: 2%;
 }
-
-
-/* end John's stuff... should be integrated into the rest of the css at some point */
-
 
 /* youtube videos styling */
 
@@ -168,3 +164,5 @@ body {
 #description{
     text-align: center;
 }
+
+
