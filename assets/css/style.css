@@ -3,9 +3,8 @@
 }
 
 body {
-    background-image: url("../images/sos.png");
+    background-image: url("../images/sos.png")
 }
-
 #main-logo {
 	/*position: absolute;*/
 	/*margin-top: 10%;*/
@@ -19,6 +18,7 @@ body {
     margin: 0;
     margin-top: -6%;
     font-family: 'Righteous', cursive;
+
 }
 
 #navbar-start {
@@ -42,11 +42,11 @@ body {
 }
 
 #mission {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14pt;
-    text-align: center;
-    margin-left: 25%;
-    margin-right: 25%;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 14pt;
+   text-align: center;
+   margin-left: 25%;
+      margin-right: 25%;
 }
 
 #search-results-first {
@@ -55,22 +55,14 @@ body {
 
 #search-results-second {
     display: none;
-}
-
-#search-result-2 {
-    height: 600px;
-    overflow: scroll;
-}
-
-#main-area {
-    height: 600px;
-    overflow: scroll;
+    /*overflow: scroll;*/
 }
 
 .image-item {
     height: 200px;
     width: 200px;
 }
+
 
 
 /*search-result.js styling */
@@ -83,6 +75,7 @@ body {
     text-align: center;
     height: 300px;
     width: 300px;
+
     -webkit-transition: background-color .2s;
     -moz-transition: background-color .2s;
     -ms-transition: background-color .2s;
@@ -100,9 +93,6 @@ body {
     background-color: #9cb9d3;
 }
 
-h3 {
-    text-align: center;
-}
 
 h4 {
     font-size: 10pt;
@@ -118,7 +108,7 @@ h4 {
 }
 
 #description {
-    text-align: center;
+    text-align: left;
 }
 
 #items > h3 {
@@ -242,7 +232,6 @@ h4 {
     width: 100%;
 }
 
-
 /* youtube videos styling */
 
 #primary-image {
@@ -254,6 +243,7 @@ h4 {
     height: 150px;
     width: 150px;
 }
+
 
 
 /************************MEDIA QUERIES. DO NOT PUT CSS AFTER HERE!**********************/
@@ -280,6 +270,5 @@ h4 {
         text-align: center;
     }
 }
-
 
 /************************MEDIA QUERIES. DO NOT PUT CSS AFTER HERE!**********************/
