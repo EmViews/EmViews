@@ -12,6 +12,7 @@
     <script src="https://cdn.rawgit.com/vaakash/jquery-collapser/master/jquery.collapser.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 
 <body>
@@ -73,7 +74,7 @@
             </div>
             <!-- Carousel image slider -->
             <div id="picture-div" class="row">
-                <h2 class="headings" id="top-title"></h2>
+                <h2 class="headings product-headings" id="top-title">fff</h2>
                 <div id="input-images">
                     <div class="col-sm-6" id="slider-thumbs">
                         <!-- Bottom switcher of slider need to empty hide bullets-->
@@ -105,16 +106,19 @@
                 </div>
             </div>
             <div id="specs-div" class="row">
-                <h2 class="headings">Specifications</h2>
+                <h2 class="headings product-headings">Descriptions</h2>
                 <div id="input-specs">
                     <p id="description">
                         <!-- insert description here from search-result.js -->
                     </p>
                 </div>
             </div>
-            <div id="comments" class="row">
-                <h2 class="headings">Comments</h2>
+            <div id="review-row" class="row">
+                <h2 class="headings product-headings">Reviews</h2>
+                <div id="input-reviews"> 
+
                 <!-- insert comments here -->
+                </div>
             </div>
             <div id="reddit-row" class="row">
                 <h2 class="headings">Reddit Threads</h2>
@@ -160,10 +164,10 @@
                         </form>
                         <!-- <hr> -->
                         <br>
-                        <p id="logInThroughGoogle">Or log in through Google:</p>&nbsp
+                        <p id="logInThroughGoogle">Or log in through Google:</p>&nbsp;
                         <img id="logInGoogleButton" src="assets/images/Googlebuttons/btn_google_signin_light_normal_web.png">
                         <hr>
-                        <p id="needAccount">Need an account?</p>&nbsp
+                        <p id="needAccount">Need an account?</p>&nbsp;
                         <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#signUpModal">Sign up here</button>
                     </div>
                 </div>
