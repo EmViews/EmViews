@@ -94,8 +94,7 @@ $(document).ready(function() {
             console.log('signed in');
             $('#logInModal').modal('hide');
             $('#signUpModal').modal('hide');
-            $('#authButtons1').html(`<button id="logOut" type="button" class="btn btn-default navbar-btn navbar-right">Log Out</button>`);
-            $('#authButtons2').html(`<button id="logOut" type="button" class="btn btn-default navbar-btn navbar-right">Log Out</button>`);
+            $('#authButtons1').html(`<li id="logOut"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>`);
         } else {
             // No user is signed in.
         }
@@ -106,13 +105,11 @@ $(document).ready(function() {
             // Sign-out successful.
             console.log('signed out');
             $('#authButtons1').html(`
-				<button id="sign-up-button" type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
-	            <button id="sign-in-button" type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#logInModal">Log In</button>
+				<li id="sign-up-button" data-toggle="modal" data-target="#signUpModal"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+	            <li id="sign-in-button" data-toggle="modal" data-target="#logInModal"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log In</a></button>
         	`);
-            $('#authButtons2').html(`
-                <button id="sign-up-button" type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
-                <button id="sign-in-button" type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#logInModal">Log In</button>
-            `);
+//<li id="sign-up-button" data-toggle="modal" data-target="#signUpModal"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+//<li id="sign-in-button" data-toggle="modal" data-target="#logInModal"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>        
         }).catch(function(error) {
             // An error happened.
             var errorCode = error.code;
