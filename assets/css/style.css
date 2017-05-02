@@ -36,6 +36,19 @@ body {
     margin-left: 1%;
 }
 */
+
+#search-result-2 {
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#main-area {
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 #main-body {
     display: none;
     margin-top: 10px;
