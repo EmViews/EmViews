@@ -124,7 +124,7 @@ $(document).ready(function() {
                         // INSERT REVIEWS
                         var getItemId = $(this).attr("itemId");
                         console.log("itemId is" + getItemId);
-                        $.getJSON("http://api.walmartlabs.com/v1/reviews/" + getItemId + "?apiKey=" + APIKey + "&format=json&responseGroup=full&callback=?",
+                        $.getJSON("https://api.walmartlabs.com/v1/reviews/" + getItemId + "?apiKey=" + APIKey + "&format=json&responseGroup=full&callback=?",
                             function(responseReview) {
                                 $("#input-reviews").empty();
                                 console.log("I'm here");
