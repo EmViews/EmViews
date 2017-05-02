@@ -3,13 +3,13 @@
 }
 
 #main-logo {
-	position: absolute;
-	/*margin-top: 10%;*/
-	top: 10%;
-	margin-left: 35%;
-	font-family: 'Righteous', cursive;
-	text-align: center;
-	font-size: 80pt;
+    position: absolute;
+    /*margin-top: 10%;*/
+    top: 10%;
+    margin-left: 35%;
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    font-size: 80pt;
 }
 
 #header-top {
@@ -46,6 +46,10 @@
 }
 
 #search-results-second {
+    display: none;
+}
+
+#favorite-results {
     display: none;
 }
 
@@ -99,7 +103,6 @@
     display: none;
 }
 
-
 .headings {
     /*margin-left: 30px;*/
     text-align: center;
@@ -129,6 +132,7 @@
     color: #FF4500;
 }
 
+
 /* youtube videos styling */
 
 .video {
@@ -139,9 +143,13 @@
     margin: 0 auto;
 }
 
+
 /* begin John's stuff (anything to do with Firebase), like userAuth and favorites styling */
 
-#logInErrors, #signUpErrors, #reviewErrors {
+#logInErrors,
+#signUpErrors,
+#reviewErrors,
+#favoriteError-div {
     text-align: center;
     color: red;
     font-weight: bold;
@@ -176,6 +184,7 @@
 
 #logOut {
     margin-right: 2%;
+    margin-left: 1%;
 }
 
 #rating-div {
@@ -190,18 +199,19 @@
     display: inline-block;
 }
 
+
 /* end John's stuff... should be integrated into the rest of the css at some point */
 
 
 /* youtube videos styling */
 
-
-#primary-image{
-    height:250px;
-    width: 250px;    
+#primary-image {
+    height: 250px;
+    width: 250px;
 }
-#secondary-image{
-    height:150px;
+
+#secondary-image {
+    height: 150px;
     width: 150px;
 }
 
@@ -225,4 +235,3 @@
         margin: 0 auto;
     }
 }
-
