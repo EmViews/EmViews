@@ -19,7 +19,7 @@ $(document).ready(function() {
         var categoryId;
         console.log("You submitted: " + productQuery);
         var querySearch =
-            "https://api.walmartlabs.com/v1/search?apiKey=" + APIKey + "&query=" + productQuery + "&responseGroup=full";
+            "http://api.walmartlabs.com/v1/search?apiKey=" + APIKey + "&query=" + productQuery + "&responseGroup=full";
             //"https://api.walmartlabs.com/v1/search?apiKey=b7zex42y8vhz2wr56d8jwq5y&query=overwatch&responseGroup=full";
 
         $.ajax({
