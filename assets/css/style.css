@@ -53,7 +53,9 @@ body {
     display: none;
     margin-top: 10px;
 }
-
+#specs-div {
+    clear:both;
+}
 #mission {
    font-family: 'Open Sans', sans-serif;
    font-size: 14pt;
