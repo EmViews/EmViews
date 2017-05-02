@@ -141,6 +141,12 @@
 
 /* begin John's stuff (anything to do with Firebase), like userAuth and favorites styling */
 
+#logInErrors, #signUpErrors, #reviewErrors {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
 #logInThroughGoogle,
 #signUpThroughGoogle {
     float: left;

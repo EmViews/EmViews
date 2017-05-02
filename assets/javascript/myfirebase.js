@@ -21,8 +21,11 @@ $('#logInLogIn').on('click', function() {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
+        if (errorCode.length) {
+            $('#logInErrors').html(`${errorCode}: ${errorMessage}`);
+        } else {
+            $('#logInErrors').empty();
+        }
         // ...
     });
 });
@@ -44,8 +47,11 @@ $('#logInGoogleButton').on('click', function() {
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
         // ...});
-        console.log(errorCode);
-        console.log(errorMessage);
+        if (errorCode.length) {
+            $('#logInErrors').html(`${errorCode}: ${errorMessage}`);
+        } else {
+            $('#logInErrors').empty();
+        }
         console.log(email);
         console.log(credential);
     });
@@ -56,8 +62,11 @@ $('#signUpLogIn').on('click', function() {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
+        if (errorCode.length) {
+            $('#signUpErrors').html(`${errorCode}: ${errorMessage}`);
+        } else {
+            $('#signUpErrors').empty();
+        }
         // ...
     });
 });
@@ -79,8 +88,11 @@ $('#signUpGoogleButton').on('click', function() {
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
         // ...});
-        console.log(errorCode);
-        console.log(errorMessage);
+        if (errorCode.length) {
+            $('#signUpErrors').html(`${errorCode}: ${errorMessage}`);
+        } else {
+            $('#signUpErrors').empty();
+        }
         console.log(email);
         console.log(credential);
     });
@@ -123,11 +135,10 @@ $(document).on('click', '#addToFavorites', function() {
     if (user) {
         // User is signed in.
         firebase.database().ref('/users').child('EMAIL ADDRESS HERE').set({
-         "first_name": "rob",
-         "age": 28
+            "first_name": "rob",
+            "age": 28
         });
-    }
-    else {
+    } else {
         // No user is signed in.
         $('#favoriteError-div').html(`Must be logged in.`)
     }
