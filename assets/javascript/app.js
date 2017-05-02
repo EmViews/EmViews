@@ -6,14 +6,14 @@ $(document).ready(function() {
             $("#main-body").hide();
             $("#videos").hide();
             $("#search-results-first").fadeIn(1000);
-            $(".navbar-brand").html("<h1 id='header-top'>EmViews</h1>").fadeIn(750)
+            // $(".navbar-brand").html("<h1 id='header-top'>EmViews</h1>").fadeIn(750)
             $("#navbar-start").animate({ top: "0px" }, "easing");
             $("#navbar-start").css({
                 "position": "relative",
                 "border": "1px solid grey",
-                "height": "100px",
-                "margin": "auto",
-                "padding-top": "25px",
+                // "height": "100px",
+                // "margin": "auto",
+                // "padding-top": "25px",
                 });
             $("#main-logo").fadeOut(250)
             $("#result-heading").html('Showing Results for "' + productQuery + '":')
@@ -62,5 +62,8 @@ $(document).ready(function() {
             $("#reddit-btn").removeClass("active")
             $("#youtube-btn").addClass("active");
         });
+        $(document).on("click", ".navbar-brand", function(){
+            window.location.reload();
+        })
     })
     // -----------------END OF DOCUMENT READY ---------------

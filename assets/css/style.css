@@ -3,10 +3,9 @@
 }
 
 #main-logo {
-	position: absolute;
+	/*position: absolute;*/
 	/*margin-top: 10%;*/
-	top: 10%;
-	margin-left: 35%;
+	margin-top: 10%;
 	font-family: 'Righteous', cursive;
 	text-align: center;
 	font-size: 80pt;
@@ -19,23 +18,20 @@
 }
 
 #navbar-start {
-    position: absolute;
-    top: 40%;
-    border: 1px solid grey;
-    height: 90px;
-    margin: auto;
-    padding-top: 25px;
+   position: absolute;
+   top: 45%;
+   width:100%;
 }
 
 #product-input {
     width: 30em;
 }
-
+/*
 #sign-up-button {
     margin-right: 2%;
     margin-left: 1%;
 }
-
+*/
 #main-body {
     display: none;
     margin-top: 10px;
@@ -190,12 +186,10 @@
 
 @media only screen and (max-width: 800px) {
     #navbar-start {
-        position: absolute;
-        top: 15%;
-        height: 300px;
+        position: relative;
     }
     #product-input {
-        width: 80%;
+        width: 100%;
         display: box;
         margin: 0 auto;
     }
@@ -206,6 +200,10 @@
     #submit-button2 {
         display: box;
         margin: 0 auto;
+    }
+    #main-logo {
+        font-size: 40px;
+        text-align: center;
     }
 }
 

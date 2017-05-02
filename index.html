@@ -15,27 +15,36 @@
 </head>
 
 <body>
-    <h1 id="main-logo">EmViews</h1>
-    <!-- This navBar appears in the middle at start,  Initial search bar  -->
-    <nav class="navbar navbar-default navbar-fixed-top" id="navbar-start">
+
+    <nav class="navbar navbar-inverse" id="navbar-start">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">
-                    <!-- This navBar appears at the top after search input-->
-                </a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">EMV</a>
             </div>
             <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
+                <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search for a product..." id="product-input">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit" id="submit-button2">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-default search-button" id="submit-button2">Submit</button>
             </form>
-            <div id="authButtons1">
-                <button id="sign-up-button" type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
-                <button id="sign-in-button" type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#logInModal">Log In</button>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="sign-up-button" data-toggle="modal" data-target="#signUpModal"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li id="sign-in-button" data-toggle="modal" data-target="#logInModal"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
             </div>
         </div>
     </nav>
+    <h1 id="main-logo">EmViews</h1>
     <div class="container-fluid">
         <!-- The div search list on whole page -->
         <div id="search-results-first" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
