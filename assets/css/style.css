@@ -139,7 +139,7 @@
     margin: 0 auto;
 }
 
-/* userAuth Google styling */
+/* begin John's stuff (anything to do with Firebase), like userAuth and favorites styling */
 
 #logInThroughGoogle,
 #signUpThroughGoogle {
@@ -172,6 +172,17 @@
     margin-right: 2%;
 }
 
+#rating-div {
+    float: left;
+}
+
+#favorite-div {
+    display: inline-block;
+}
+
+#favoriteError-div {
+    display: inline-block;
+}
 
 /* end John's stuff... should be integrated into the rest of the css at some point */
 

@@ -64,6 +64,10 @@ $(document).ready(function() {
                     //gets value for index when "this" item is clicked
                     var index = $(this).attr("value");
 
+                    $('#name-div').html(`<h1>Product Name/Title</h1>`);
+                    $('#rating-div').html(`<p>Stars Rating &nbsp</p>`);
+                    $('#favorite-div').html(`<button id="addToFavorites" type="button" class="btn btn-danger" value="">Add to Favorites</button>`)
+
                     //first empties and return new images, if not empty object
                     $("#input-images").empty();
                     if (response.items[index].largeImage == null || response.items[index].largeImage == "") {
