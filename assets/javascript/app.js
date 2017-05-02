@@ -34,7 +34,7 @@ $(document).ready(function() {
             $("#picture-div").fadeIn(750);
             $("#specs-div").fadeIn(750);
             $("#reddit-row").hide();
-            $("#comments").fadeIn(750);
+            $("#review-row").fadeIn(750);
             $("#youtubes").hide();
             $("#product-btn").addClass("active");
             $("#reddit-btn").removeClass("active")
@@ -45,7 +45,7 @@ $(document).ready(function() {
             $("#picture-div").hide();
             $("#specs-div").hide();
             $("#reddit-row").fadeIn(750);
-            $("#comments").hide();
+            $("#review-row").hide();
             $("#youtubes").hide();
             $("#product-btn").removeClass("active");
             $("#reddit-btn").addClass("active")
@@ -56,7 +56,7 @@ $(document).ready(function() {
             $("#picture-div").hide();
             $("#specs-div").hide();
             $("#reddit-row").hide();
-            $("#comments").hide();
+            $("#review-row").hide();
             $("#youtubes").fadeIn(750);
             $("#product-btn").removeClass("active");
             $("#reddit-btn").removeClass("active")
