@@ -21,7 +21,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="index.html">
-    <!-- This navBar appears at the top after search input-->
+                    <!-- This navBar appears at the top after search input-->
                 </a>
             </div>
             <form class="navbar-form navbar-left" role="search">
@@ -66,10 +66,37 @@
                     </div>
                 </div>
             </div>
+            <!-- Carousel image slider -->
             <div id="picture-div" class="row">
-                <h2 class="headings">Pictures</h2>
+                <h2 class="headings" id="top-title"></h2>
                 <div id="input-images">
-                    <!-- insert image here from search-result.js -->
+                    <div class="col-sm-6" id="slider-thumbs">
+                        <!-- Bottom switcher of slider need to empty hide bullets-->
+                        <ul class="hide-bullets">
+                        </ul>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="col-xs-12" id="slider">
+                            <!-- Top part of the slider -->
+                            <div class="row">
+                                <div class="col-sm-12" id="carousel-bounding-box">
+                                    <div class="carousel slide" id="myCarousel">
+                                        <!-- Carousel items -->
+                                        <div class="carousel-inner">
+                                            <!-- Here will have appending images -->
+                                        </div>
+                                    </div>
+                                    <!-- Carousel nav -->
+                                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="specs-div" class="row">
@@ -176,10 +203,10 @@
                         </form>
                         <!-- <hr> -->
                         <br>
-                        <p id="signUpThroughGoogle">Or sign up through Google:</p>&nbsp
+                        <p id="signUpThroughGoogle">Or sign up through Google:</p>&nbsp;
                         <img id="signUpGoogleButton" src="assets/images/Googlebuttons/btn_google_signin_light_normal_web.png">
                         <hr>
-                        <p id="haveAccount">Already have an account?</p>&nbsp
+                        <p id="haveAccount">Already have an account?</p>&nbsp;
                         <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#logInModal">Log in here</button>
                     </div>
                 </div>

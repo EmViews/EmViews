@@ -1,5 +1,4 @@
-//If your confuse only edit this serach-result.js :)
- var productQuery;
+var productQuery;
 $(document).ready(function() {
 
     // calling this json object from data.js
@@ -15,13 +14,13 @@ $(document).ready(function() {
 
         var APIKey = "b7zex42y8vhz2wr56d8jwq5y";
         productQuery = $("#product-input").val().trim()
-        // .replace(/ /g, "+");
-        var sort= "relevance";
+            // .replace(/ /g, "+");
+        var sort = "relevance";
         var categoryId;
         console.log("You submitted: " + productQuery);
-        var querySearch = 
-        "http://api.walmartlabs.com/v1/search?apiKey=" +APIKey +"&query="+productQuery+ "&responseGroup=full";
-        // "http://api.walmartlabs.com/v1/search?apiKey=b7zex42y8vhz2wr56d8jwq5y&query=overwatch&responseGroup=full";
+        var querySearch =
+            "http://api.walmartlabs.com/v1/search?apiKey=" + APIKey + "&query=" + productQuery + "&responseGroup=full";
+            //"http://api.walmartlabs.com/v1/search?apiKey=b7zex42y8vhz2wr56d8jwq5y&query=overwatch&responseGroup=full";
 
         $.ajax({
                 url: querySearch,
@@ -63,26 +62,50 @@ $(document).ready(function() {
 
                     //gets value for index when "this" item is clicked
                     var index = $(this).attr("value");
+                    console.log("you choose at index" + index);
+                    // Empty the thumbnails
+                    $(".hide-bullets").empty();
+                    //empty the images in the result box
+                    $(".carousel-inner").empty();
 
-                    //first empties and return new images, if not empty object
-                    $("#input-images").empty();
-                    if (response.items[index].largeImage == null || response.items[index].largeImage == "") {
-                        $("#input-images").html("Womp Womp..no pretty picture here.. :'(");
-                    } 
-                    //prepends primary images and appends secondary images by for loop
-                    else {
-                        var imageBox = $("<img class='imageBox' id='primary-image'>").attr("src", response.items[index].largeImage);
-                        $("#input-images").prepend(imageBox);
+                    //dynamically creates PRIMARY IMAGES - Here
+                    //create a new row and adds thumbnail to view
+                    var createRow = $("<li class='col-sm-3'>");
+                    var thumbnail = $("<a class='thumbnail' id='carousel-selector-0'>");
+                    var image1 = $("<img class='imageBox' id='primary-image'>").attr("src", response.items[index].largeImage);
+                    //<img> class imageBox tag inserted to <a> class thumbnail tag
+                    thumbnail.append(image1);
+                    createRow.append(thumbnail);
+                    $(".hide-bullets").prepend(createRow);
 
-                        for (var i =0; i < response.items[index].imageEntities.length; i++){
-                            console.log("response.items[index].imageEntities[i].entityType")
-                            if (response.items[index].imageEntities[i].entityType == "SECONDARY"){
-                                var imageBox2 = $("<img class='imageBox' id='secondary-image'>").attr("src", response.items[index].imageEntities[i].largeImage);
+                    //Create an active item for the first slide image
+                    var activeItem = $("<div class='active item' data-slide-number='0'>");
+                    var imageSlide1 = $("<img>").attr("src", response.items[index].largeImage);
+                    activeItem.append(imageSlide1);
+                    $(".carousel-inner").prepend(activeItem);
 
-                                $("#input-images").append(imageBox2);
-                            }
+                    //dynamically creates SECONDARY IMAGES - Here
+                    var addItemNum = 1;
+                    for (var i = 0; i < response.items[index].imageEntities.length; i++) {
+                        console.log(response.items[index].imageEntities.length);
+                        if (response.items[index].imageEntities[i].entityType == "SECONDARY") {
+                            //creates thumbnails and append to the boxes 
+                            var createRow = $("<li class='col-sm-3'>");
+                            var thumbnail = $("<a class='thumbnail' id='carousel-selector-" + addItemNum + "'>");
+                            var image = $("<img class='imageBox' id='secondary-image'>").attr("src", response.items[index].imageEntities[i].largeImage);
+                            thumbnail.append(image);
+                            createRow.append(thumbnail);
+                            $(".hide-bullets").append(createRow);
+
+                            //creates slide images and append to the carousel
+                            var item = $("<div class='item' data-slide-number='" + addItemNum + "'>");
+                            var imageSlide = $("<img>").attr("src", response.items[index].imageEntities[i].largeImage);
+                            item.append(imageSlide);
+                            $(".carousel-inner").append(item);
+                            addItemNum++;
                         }
                     }
+                    addItemNum = 1;
 
                     //first empties and return new description, if not empty object
                     $("#description").empty();
@@ -107,6 +130,28 @@ $(document).ready(function() {
     });
 
 });
+
+//------------Carousel Scroller - start
+$(document).on("click", "[id^=carousel-selector-]", function() {
+    $('#myCarousel').carousel('pause');
+    //Handles the carousel thumbnails
+    var id_selector = $(this).attr("id");
+    console.log("clicked a thumnail");
+    try {
+        var id = /-(\d+)$/.exec(id_selector)[1];
+        console.log(id_selector, id);
+        $('#myCarousel').carousel(parseInt(id));
+    } catch (e) {
+        console.log('Regex failed!', e);
+    }
+
+    // When the carousel slides, auto update the text
+    $('#myCarousel').on('slid.bs.carousel', function(e) {
+        var id = $('.item.active').data('slide-number');
+        $('#carousel-text').html($('#slide-content-' + id).html());
+    });
+});
+//------------Carousel Scroller - end
 
 //add long and short descriptions
 //add specs table
