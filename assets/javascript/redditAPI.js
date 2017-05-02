@@ -13,6 +13,7 @@ $(document).ready(function() {
             // Example query:
             // https://www.reddit.com/search.json?q=title:computer+wrist+pad+title:review&limit=10&sort=hot
             $("#reddit-results").empty();
+            $("#reddit-results").html("<img id='loading-gif' src='assets/images/loading.gif'>")
             var searchQuery = $("#product-input").val().trim().replace(/ /g, "+");
             var limit = 10;
             var queryURL = "https://www.reddit.com/search.json?q=title:" + searchQuery + "+title:review&limit=" + limit + "&sort=hot"
