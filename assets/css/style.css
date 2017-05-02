@@ -3,19 +3,20 @@
 }
 
 #main-logo {
-	position: absolute;
-	/*margin-top: 10%;*/
-	top: 10%;
-	margin-left: 35%;
-	font-family: 'Righteous', cursive;
-	text-align: center;
-	font-size: 80pt;
+    /*position: absolute;*/
+    /*margin-top: 10%;*/
+    /*top: 10%;*/
+    /*margin-left: 35%;*/
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    font-size: 80pt;
 }
 
 #header-top {
     margin: 0;
     margin-top: -6%;
     font-family: 'Righteous', cursive;
+
 }
 
 #navbar-start {
@@ -41,18 +42,28 @@
     margin-top: 10px;
 }
 
+#mission {
+   font-family: 'Open Sans', sans-serif;
+   font-size: 14pt;
+   text-align: center;
+   margin-left: 25%;
+      margin-right: 25%;
+}
+
 #search-results-first {
     display: none;
 }
 
 #search-results-second {
     display: none;
+    /*overflow: scroll;*/
 }
 
 .image-item {
     height: 200px;
     width: 200px;
 }
+
 
 
 /*search-result.js styling */
@@ -65,6 +76,27 @@
     text-align: center;
     height: 300px;
     width: 300px;
+
+    -webkit-transition: background-color .2s;
+    -moz-transition: background-color .2s;
+    -ms-transition: background-color .2s;
+    -o-transition: background-color .2s;
+    transition: background-color .2s;
+    background-color: white;
+}
+
+.search-item:hover {
+    -webkit-transition: background-color .2s;
+    -moz-transition: background-color .2s;
+    -ms-transition: background-color .2s;
+    -o-transition: background-color .2s;
+    transition: background-color .2s;
+    background-color: #9cb9d3;
+}
+
+
+h4 {
+    font-size: 10pt;
 }
 
 .img-item {
@@ -95,10 +127,13 @@
     display: none;
 }
 
+.loading-gif {
+    margin: auto;
+}
+
 #youtubes {
     display: none;
 }
-
 
 .headings {
     /*margin-left: 30px;*/
@@ -129,6 +164,7 @@
     color: #FF4500;
 }
 
+
 /* youtube videos styling */
 
 .video {
@@ -138,6 +174,7 @@
     display: block;
     margin: 0 auto;
 }
+
 
 /* userAuth Google styling */
 
@@ -176,17 +213,41 @@
 /* end John's stuff... should be integrated into the rest of the css at some point */
 
 
+/*Carousel style*/
+
+.hide-bullets {
+    list-style: none;
+    margin-left: -40px;
+    margin-top: 20px;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.carousel-inner .item img {
+    width: 100%;
+}
+
+.carousel-inner .item a img {
+    width: 100%;
+}
+
 /* youtube videos styling */
 
-
-#primary-image{
-    height:250px;
-    width: 250px;    
+#primary-image {
+    height: 250px;
+    width: 250px;
 }
-#secondary-image{
-    height:150px;
+
+#secondary-image {
+    height: 150px;
     width: 150px;
 }
+
+
+
+/************************MEDIA QUERIES. DO NOT PUT CSS AFTER HERE!**********************/
 
 @media only screen and (max-width: 800px) {
     #navbar-start {
@@ -209,22 +270,4 @@
     }
 }
 
-/*Carousel style*/
-.hide-bullets {
-    list-style:none;
-    margin-left: -40px;
-    margin-top:20px;
-}
-
-.thumbnail {
-    padding: 0;
-}
-
-.carousel-inner .item img 
-{
-    width: 100%;
-}
-
-.carousel-inner .item a img {
-    width: 100%;
-}
+/************************MEDIA QUERIES. DO NOT PUT CSS AFTER HERE!**********************/
