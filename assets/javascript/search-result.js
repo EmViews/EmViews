@@ -18,15 +18,9 @@ $(document).ready(function() {
         var sort = "relevance";
         var categoryId;
         console.log("You submitted: " + productQuery);
-        var querySearch =
-            "https://api.walmartlabs.com/v1/search?apiKey=" + APIKey + "&query=" + productQuery + "&responseGroup=full";
-            //"https://api.walmartlabs.com/v1/search?apiKey=b7zex42y8vhz2wr56d8jwq5y&query=overwatch&responseGroup=full";
 
-        $.ajax({
-                url: querySearch,
-                method: "GET"
-            })
-            .done(function(response) {
+       $.getJSON("https://api.walmartlabs.com/v1/search?apiKey=b7zex42y8vhz2wr56d8jwq5y&query=" + productQuery + "&responseGroup=full&callback=?",
+           function(response) {
                 //check I receive a return
                 // console.log("Calling response:");
                 // console.log(response);
