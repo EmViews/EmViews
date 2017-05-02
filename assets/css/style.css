@@ -120,6 +120,7 @@ h4 {
 .imageBox {
     display: block;
     margin: 0 auto;
+    height:125px;
 }
 
 #description {

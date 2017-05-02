@@ -71,7 +71,7 @@ $(document).ready(function() {
                         //create a new row and adds thumbnail to view
                         var createRow = $("<li class='col-sm-5'>");
                         var thumbnail = $("<a class='thumbnail' id='carousel-selector-0'>");
-                        var image1 = $("<img class='imageBox' id='primary-image'>").attr("src", response.items[index].largeImage);
+                        var image1 = $("<img class='imageBox' id='primary-image' style='height:125px'>").attr("src", response.items[index].largeImage);
                         //<img> class imageBox tag inserted to <a> class thumbnail tag
                         thumbnail.append(image1);
                         createRow.append(thumbnail);
