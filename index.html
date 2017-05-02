@@ -12,6 +12,7 @@
     <script src="https://cdn.rawgit.com/vaakash/jquery-collapser/master/jquery.collapser.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 
 <body>
@@ -70,10 +71,10 @@
                 </div>
             </div>
             <div id="main-area">
-            <br>
+                <br>
                 <!-- Carousel image slider -->
                 <div id="picture-div" class="row">
-                    <h2 class="headings" id="top-title"></h2>
+                    <h2 class="headings product-headings" id="top-title">fff</h2>
                     <div id="input-images">
                         <div class="col-sm-6" id="slider-thumbs">
                             <!-- Bottom switcher of slider need to empty hide bullets-->
@@ -90,14 +91,14 @@
                                             <div class="carousel-inner">
                                                 <!-- Here will have appending images -->
                                             </div>
+                                            <!-- Carousel nav -->
+                                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                            </a>
+                                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                            </a>
                                         </div>
-                                        <!-- Carousel nav -->
-                                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                                            <span class="glyphicon glyphicon-chevron-left"></span>
-                                        </a>
-                                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                                            <span class="glyphicon glyphicon-chevron-right"></span>
-                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -105,129 +106,136 @@
                     </div>
                 </div>
                 <div id="specs-div" class="row">
-                    <h2 class="headings">Specifications</h2>
+                    <h2 class="headings product-headings">Descriptions</h2>
                     <div id="input-specs">
                         <p id="description">
                             <!-- insert description here from search-result.js -->
                         </p>
                     </div>
                 </div>
-                <div id="comments" class="row">
-                    <h2 class="headings">Comments</h2>
-                    <!-- insert comments here -->
+                <div id="review-row" class="row">
+                    <h2 class="headings product-headings">Reviews</h2>
+                    <div id="input-reviews">
+                        <!-- insert comments here -->
+                    </div>
                 </div>
                 <div id="reddit-row" class="row">
                     <h2 class="headings">Reddit Threads</h2>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-md-12 col-sm-12 col-xs-12" id="reddit-results">
                         <!-- insert Reddit thread here -->
                     </div>
-                </div>
-                <div id="youtubes" class="row">
-                    <h2 class="headings">Youtube Videos</h2>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-md-12 col-sm-12 col-xs-12" id="youtube-results">
+                    <div id="reddit-row" class="row">
+                        <h2 class="headings">Reddit Threads</h2>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-md-12 col-sm-12 col-xs-12" id="reddit-results">
+                            <!-- insert Reddit thread here -->
+                        </div>
+                    </div>
+                    <div id="youtubes" class="row">
+                        <h2 class="headings">Youtube Videos</h2>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-md-12 col-sm-12 col-xs-12" id="youtube-results">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Log In modal -->
-        <div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Log In</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Already have an account? Log in with e-mail:</p>
-                        <form class="form-horizontal">
-                            <div class="form-group">
-                                <label for="logInEmail" class="col-sm-2 control-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input id="logInEmail" type="email" class="form-control" placeholder="Email" required>
+            <!-- Log In modal -->
+            <div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Log In</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Already have an account? Log in with e-mail:</p>
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="logInEmail" class="col-sm-2 control-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input id="logInEmail" type="email" class="form-control" placeholder="Email" required>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="logInPassword" class="col-sm-2 control-label">Password</label>
-                                <div class="col-sm-10">
-                                    <input id="logInPassword" type="password" class="form-control" placeholder="Password" required>
+                                <div class="form-group">
+                                    <label for="logInPassword" class="col-sm-2 control-label">Password</label>
+                                    <div class="col-sm-10">
+                                        <input id="logInPassword" type="password" class="form-control" placeholder="Password" required>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <button id="logInLogIn" type="submit" class="btn btn-default">Log in</button>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button id="logInLogIn" type="submit" class="btn btn-default">Log in</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                        <!-- <hr> -->
-                        <br>
-                        <p id="logInThroughGoogle">Or log in through Google:</p>&nbsp
-                        <img id="logInGoogleButton" src="assets/images/Googlebuttons/btn_google_signin_light_normal_web.png">
-                        <hr>
-                        <p id="needAccount">Need an account?</p>&nbsp
-                        <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#signUpModal">Sign up here</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end Log In modal -->
-        <!-- Sign Up modal -->
-        <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Need an account? Register with e-mail:</p>
-                        <form class="form-horizontal" onsubmit="confirmPasswords()">
-                            <div class="form-group">
-                                <label for="registerEmail" class="col-sm-2 control-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input id="registerEmail" type="email" class="form-control" placeholder="Email" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="registerPassword1" class="col-sm-2 control-label">Password</label>
-                                <div class="col-sm-10">
-                                    <input id="registerPassword1" type="password" class="form-control" id="" placeholder="Password" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="registerPassword2" class="col-sm-2 control-label">Confirm Password</label>
-                                <div class="col-sm-10">
-                                    <input id="registerPassword2" type="password" class="form-control" id="inputPassword3" placeholder="Password" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <button id="signUpLogIn" type="submit" class="btn btn-default">Sign Up</button>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                </div>
-                            </div>
-                        </form>
-                        <!-- <hr> -->
-                        <br>
-                        <p id="signUpThroughGoogle">Or sign up through Google:</p>&nbsp;
-                        <img id="signUpGoogleButton" src="assets/images/Googlebuttons/btn_google_signin_light_normal_web.png">
-                        <hr>
-                        <p id="haveAccount">Already have an account?</p>&nbsp;
-                        <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#logInModal">Log in here</button>
+                            </form>
+                            <!-- <hr> -->
+                            <br>
+                            <p id="logInThroughGoogle">Or log in through Google:</p>&nbsp;
+                            <img id="logInGoogleButton" src="assets/images/Googlebuttons/btn_google_signin_light_normal_web.png">
+                            <hr>
+                            <p id="needAccount">Need an account?</p>&nbsp;
+                            <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#signUpModal">Sign up here</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- end Sign Up modal -->
-        <!-- data.js is JSON format called by response1 for database, delete when done -->
-        <script type="text/javascript" src="assets/javascript/data.js"></script>
-        <!-- search-result api -->
-        <script type="text/javascript" src="assets/javascript/search-result.js"></script>
-        <script type="text/javascript" src="assets/javascript/app.js"></script>
-        <script type="text/javascript" src="assets/javascript/redditAPI.js"></script>
-        <script type="text/javascript" src="assets/javascript/youtube.js"></script>
-        <script src="https://apis.google.com/js/client.js?onload=init"></script>
-        <script type="text/javascript" src="assets/javascript/myfirebase.js"></script>
+            <!-- end Log In modal -->
+            <!-- Sign Up modal -->
+            <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Need an account? Register with e-mail:</p>
+                            <form class="form-horizontal" onsubmit="confirmPasswords()">
+                                <div class="form-group">
+                                    <label for="registerEmail" class="col-sm-2 control-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input id="registerEmail" type="email" class="form-control" placeholder="Email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerPassword1" class="col-sm-2 control-label">Password</label>
+                                    <div class="col-sm-10">
+                                        <input id="registerPassword1" type="password" class="form-control" id="" placeholder="Password" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerPassword2" class="col-sm-2 control-label">Confirm Password</label>
+                                    <div class="col-sm-10">
+                                        <input id="registerPassword2" type="password" class="form-control" id="inputPassword3" placeholder="Password" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button id="signUpLogIn" type="submit" class="btn btn-default">Sign Up</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- <hr> -->
+                            <br>
+                            <p id="signUpThroughGoogle">Or sign up through Google:</p>&nbsp;
+                            <img id="signUpGoogleButton" src="assets/images/Googlebuttons/btn_google_signin_light_normal_web.png">
+                            <hr>
+                            <p id="haveAccount">Already have an account?</p>&nbsp;
+                            <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#logInModal">Log in here</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end Sign Up modal -->
+            <!-- data.js is JSON format called by response1 for database, delete when done -->
+            <script type="text/javascript" src="assets/javascript/data.js"></script>
+            <!-- search-result api -->
+            <script type="text/javascript" src="assets/javascript/search-result.js"></script>
+            <script type="text/javascript" src="assets/javascript/app.js"></script>
+            <script type="text/javascript" src="assets/javascript/redditAPI.js"></script>
+            <script type="text/javascript" src="assets/javascript/youtube.js"></script>
+            <script src="https://apis.google.com/js/client.js?onload=init"></script>
+            <script type="text/javascript" src="assets/javascript/myfirebase.js"></script>
 </body>
 
 </html>
