@@ -17,26 +17,20 @@ $(document).ready(function() {
                 });
             $("#main-logo").fadeOut(250);
             $("#mission").fadeOut(250);
-
             $("#result-heading").html('Showing Results for "' + productQuery + '":')
         });
 
-        // $(document).on('click', '#search-results-first', function() {
-        //     event.preventDefault();
-        //     $("#search-results-first").hide();
-        //     $("#search-results-second").fadeIn(500);
-        //     $("#main-body").fadeIn(500);
-        //     $("#videos").fadeIn(500);
-        //     $("#result-heading").html(`Showing Results for "${productQuery}":`)
-        // });
-
-        $(document).on("click", ".search-item", function() {
+        $(document).on('click', '#search-results-first', function() {
             event.preventDefault();
             $("#search-results-first").hide();
             $("#search-results-second").fadeIn(500);
             $("#main-body").fadeIn(500);
             $("#videos").fadeIn(500);
-            $("#result-heading").html(`Showing Results for "${productQuery}":`)
+            $("#result-heading").html(`Search Results for "${productQuery}":`)
+        });
+
+        $(document).on("click", ".search-item", function() {
+            event.preventDefault();
             $("#picture-div").fadeIn(750);
             $("#specs-div").fadeIn(750);
             $("#comments").fadeIn(750);
@@ -59,7 +53,7 @@ $(document).ready(function() {
             $("#reddit-btn").removeClass("active")
             $("#youtube-btn").removeClass("active");
         })
-
+        
         $(document).on("click", "#reddit-btn", function() {
             event.preventDefault();
             $("#picture-div").hide();
