@@ -36,11 +36,26 @@ body {
     margin-left: 1%;
 }
 */
+
+#search-result-2 {
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#main-area {
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 #main-body {
     display: none;
     margin-top: 10px;
 }
-
+#specs-div {
+    clear:both;
+}
 #mission {
    font-family: 'Open Sans', sans-serif;
    font-size: 14pt;
@@ -106,6 +121,7 @@ h4 {
 .imageBox {
     display: block;
     margin: 0 auto;
+    height:125px;
 }
 
 #description {
