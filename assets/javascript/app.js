@@ -14,7 +14,7 @@ $(document).ready(function() {
                 // "height": "100px",
                 // "margin": "auto",
                 // "padding-top": "25px",
-                });
+            });
             $("#main-logo").fadeOut(250);
             $("#mission").fadeOut(250);
             $("#result-heading").html('Showing Results for "' + productQuery + '":')
@@ -23,7 +23,11 @@ $(document).ready(function() {
         $(document).on('click', '#search-results-first', function() {
             event.preventDefault();
             $("#search-results-first").hide();
-            $("#search-results-second").fadeIn(500);
+            if ($(window).width() <= 800) {
+                $("#search-results-second").hide();
+            }else {
+                $("#search-results-second").fadeIn(500);
+            };
             $("#main-body").fadeIn(500);
             $("#videos").fadeIn(500);
             $("#result-heading").html(`Search Results for "${productQuery}":`)
@@ -53,7 +57,7 @@ $(document).ready(function() {
             $("#reddit-btn").removeClass("active")
             $("#youtube-btn").removeClass("active");
         })
-        
+
         $(document).on("click", "#reddit-btn", function() {
             event.preventDefault();
             $("#picture-div").hide();
@@ -77,7 +81,7 @@ $(document).ready(function() {
             $("#reddit-btn").removeClass("active")
             $("#youtube-btn").addClass("active");
         });
-        $(document).on("click", ".navbar-brand", function(){
+        $(document).on("click", ".navbar-brand", function() {
             window.location.reload();
         })
     })
