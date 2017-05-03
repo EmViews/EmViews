@@ -13,9 +13,9 @@ $(document).ready(function() {
 
 
     // function confirmPasswords() {
-    // 	if ($('#registerPassword1') != $('#registerPassword2')) {
+    //  if ($('#registerPassword1') != $('#registerPassword2')) {
 
-    // 	}
+    //  }
     // }
 
     $('#logInLogIn').on('click', function() {
@@ -23,8 +23,11 @@ $(document).ready(function() {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
-            console.log(errorCode);
-            console.log(errorMessage);
+            if (errorCode.length) {
+                $('#logInErrors').html(`${errorCode}: ${errorMessage}`);
+            } else {
+                $('#logInErrors').empty();
+            }
             // ...
         });
     });
@@ -46,8 +49,11 @@ $(document).ready(function() {
             // The firebase.auth.AuthCredential type that was used.
             var credential = error.credential;
             // ...});
-            console.log(errorCode);
-            console.log(errorMessage);
+            if (errorCode.length) {
+                $('#logInErrors').html(`${errorCode}: ${errorMessage}`);
+            } else {
+                $('#logInErrors').empty();
+            }
             console.log(email);
             console.log(credential);
         });
@@ -58,8 +64,11 @@ $(document).ready(function() {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
-            console.log(errorCode);
-            console.log(errorMessage);
+            if (errorCode.length) {
+                $('#signUpErrors').html(`${errorCode}: ${errorMessage}`);
+            } else {
+                $('#signUpErrors').empty();
+            }
             // ...
         });
     });
@@ -81,8 +90,11 @@ $(document).ready(function() {
             // The firebase.auth.AuthCredential type that was used.
             var credential = error.credential;
             // ...});
-            console.log(errorCode);
-            console.log(errorMessage);
+            if (errorCode.length) {
+                $('#signUpErrors').html(`${errorCode}: ${errorMessage}`);
+            } else {
+                $('#signUpErrors').empty();
+            }
             console.log(email);
             console.log(credential);
         });
@@ -97,6 +109,12 @@ $(document).ready(function() {
             $('#authButtons1').html(`<li id="logOut"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>`);
         } else {
             // No user is signed in.
+            $('#authButtons1').html(`
+                <li id="sign-up-button" data-toggle="modal" data-target="#signUpModal"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li id="sign-in-button" data-toggle="modal" data-target="#logInModal"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log In</a></button>
+            `);
+            //<li id="sign-up-button" data-toggle="modal" data-target="#signUpModal"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            //<li id="sign-in-button" data-toggle="modal" data-target="#logInModal"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         }
     });
 
@@ -104,12 +122,6 @@ $(document).ready(function() {
         firebase.auth().signOut().then(function() {
             // Sign-out successful.
             console.log('signed out');
-            $('#authButtons1').html(`
-				<li id="sign-up-button" data-toggle="modal" data-target="#signUpModal"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-	            <li id="sign-in-button" data-toggle="modal" data-target="#logInModal"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log In</a></button>
-        	`);
-//<li id="sign-up-button" data-toggle="modal" data-target="#signUpModal"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-//<li id="sign-in-button" data-toggle="modal" data-target="#logInModal"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>        
         }).catch(function(error) {
             // An error happened.
             var errorCode = error.code;
