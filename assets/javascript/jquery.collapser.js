@@ -5,7 +5,7 @@
  * Released under the MIT License.
  */
 
-;(function ( $, window, document, undefined ) {
+(function ( $, window, document, undefined ) {
 	
     var name = "collapser",
         defaults = {
