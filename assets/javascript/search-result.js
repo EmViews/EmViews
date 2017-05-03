@@ -61,7 +61,7 @@ $(document).ready(function() {
                         var index = $(this).attr("value");
                         console.log("you choose index " + index);
 
-                        $("#top-title").html(response.items[index].name);
+                        $("#top-title").html(response.items[index].name +"&nbsp;&nbsp;- $" +response.items[index].salePrice);
                         // Empty the thumbnails
                         $(".hide-bullets").empty();
                         //empty the images in the result box
