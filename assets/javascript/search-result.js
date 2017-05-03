@@ -72,6 +72,14 @@ $(document).ready(function() {
                         var createRow = $("<li class='col-sm-5'>");
                         var thumbnail = $("<a class='thumbnail' id='carousel-selector-0'>");
                         var image1 = $("<img class='imageBox' id='primary-image' style='height:125px'>").attr("src", response.items[index].largeImage);
+                       
+                       //These RATING STARS WORK
+                        //set the ratings
+                        $(".ratings").empty();
+                         $('.ratings').rating({size:'xs', displayOnly:true, hoverEnabled:false});
+                         $('.ratings').rating('update', response.items[index].customerRating);
+
+
                         //<img> class imageBox tag inserted to <a> class thumbnail tag
                         thumbnail.append(image1);
                         createRow.append(thumbnail);
