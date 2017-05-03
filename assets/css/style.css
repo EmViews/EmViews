@@ -270,6 +270,9 @@ h4 {
         margin-left:5%;
         margin-right:5%;
     }
+    .btn-group-justified{
+        display:block;
+    }
 }
 
 /************************MEDIA QUERIES. DO NOT PUT CSS AFTER HERE!**********************/
