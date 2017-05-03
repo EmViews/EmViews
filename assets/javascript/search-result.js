@@ -32,7 +32,7 @@ $(document).ready(function() {
                         var searchItem = $("<div class='search-item col-lg-3' id='item'>");
 
                         //create div with Class titleItem, with title,upc, ean, and value attributes,value is used for indexing
-                        var title = $("<div class='title-item canClick'>").html("<h4>" + response.items[i].name + "</h4>");
+                        var title = $("<div class='title-item canClick'>").html("<h4>" + response.items[i].name + "&nbsp;&nbsp;- $" + response.items[i].salePrice + "</h4>");
                         title.attr("title", response.items[i].name);
                         title.attr("itemId", response.items[i].itemId);
                         title.attr("value", i);
