@@ -32,7 +32,7 @@ $(document).ready(function() {
                         var searchItem = $("<div class='search-item col-lg-3' id='item'>");
 
                         //create div with Class titleItem, with title,upc, ean, and value attributes,value is used for indexing
-                        var title = $("<div class='title-item canClick'>").html("<h4>" + response.items[i].name + "&nbsp;&nbsp;- $" +response.items[i].salePrice+"</h4>");
+                        var title = $("<div class='title-item canClick'>").html("<h4>" + response.items[i].name + "</h4>");
                         title.attr("title", response.items[i].name);
                         title.attr("itemId", response.items[i].itemId);
                         title.attr("value", i);
@@ -45,13 +45,8 @@ $(document).ready(function() {
                         image.attr("value", i);
                         $('.image-item').css('cursor', 'pointer');
 
-//WANT TO UPDATE STARS TO ALL THE ITEMS
-                        var newRatings = $("<a class='ratings-item'>");
-                        $(".ratings-items").rating({size:'xs', displayOnly:true, hoverEnabled:false});
-                        var ratings = $(".ratings-items").rating('update', response.items[i].customerRating);
-
                         //add image and title into searchItem
-                        searchItem.append(image).append(title).append(ratings);
+                        searchItem.append(image).append(title);
 
                         searchItem.appendTo("#search-result-1, #search-result-2");
                         $("#search-result-2").children().removeClass("col-lg-3");
@@ -66,17 +61,11 @@ $(document).ready(function() {
                         var index = $(this).attr("value");
                         console.log("you choose index " + index);
 
-                        $("#top-title").html(response.items[index].name +"&nbsp;&nbsp;- $" +response.items[index].salePrice);
+                        $("#top-title").html(response.items[index].name);
                         // Empty the thumbnails
                         $(".hide-bullets").empty();
                         //empty the images in the result box
                         $(".carousel-inner").empty();
-                        
-//These RATING STARS WORK
-                        //set the ratings
-                        $(".ratings").empty();
-                         $('.ratings').rating({size:'xs', displayOnly:true, hoverEnabled:false});
-                         $('.ratings').rating('update', response.items[index].customerRating);
 
                         //dynamically creates PRIMARY IMAGES - Here
                         //create a new row and adds thumbnail to view
