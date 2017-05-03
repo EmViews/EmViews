@@ -5,31 +5,33 @@
 body {
     background-image: url("../images/sos.png")
 }
+
 #main-logo {
-	/*position: absolute;*/
-	/*margin-top: 10%;*/
-	margin-top: 10%;
-	font-family: 'Righteous', cursive;
-	text-align: center;
-	font-size: 80pt;
+    /*position: absolute;*/
+    /*margin-top: 10%;*/
+    margin-top: 10%;
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    font-size: 80pt;
 }
 
 #header-top {
     margin: 0;
     margin-top: -6%;
     font-family: 'Righteous', cursive;
-
 }
 
 #navbar-start {
-   position: absolute;
-   top: 45%;
-   width:100%;
+    position: absolute;
+    top: 45%;
+    width: 100%;
 }
 
 #product-input {
     width: 30em;
 }
+
+
 /*
 #sign-up-button {
     margin-right: 2%;
@@ -53,14 +55,16 @@ body {
     display: none;
     margin-top: 10px;
 }
+
 #specs-div {
-    clear:both;
+    clear: both;
 }
+
 #mission {
-   font-family: 'Open Sans', sans-serif;
-   font-size: 14pt;
-   text-align: center;
-   margin-left: 25%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14pt;
+    text-align: center;
+    margin-left: 25%;
     margin-right: 25%;
     margin-top: 15%;
 }
@@ -80,7 +84,6 @@ body {
 }
 
 
-
 /*search-result.js styling */
 
 .search-item {
@@ -91,7 +94,6 @@ body {
     text-align: center;
     height: 300px;
     width: 300px;
-
     -webkit-transition: background-color .2s;
     -moz-transition: background-color .2s;
     -ms-transition: background-color .2s;
@@ -109,7 +111,6 @@ body {
     background-color: #9cb9d3;
 }
 
-
 h4 {
     font-size: 10pt;
 }
@@ -121,14 +122,14 @@ h4 {
 .imageBox {
     display: block;
     margin: 0 auto;
-    height:125px;
+    height: 125px;
 }
 
 #description {
     text-align: left;
 }
 
-#items > h3 {
+.items > h3 {
     text-align: center;
 }
 
@@ -245,6 +246,7 @@ h4 {
     width: 100%;
 }
 
+
 /* youtube videos styling */
 
 #primary-image {
@@ -256,7 +258,6 @@ h4 {
     height: 150px;
     width: 150px;
 }
-
 
 
 /************************MEDIA QUERIES. DO NOT PUT CSS AFTER HERE!**********************/
@@ -283,12 +284,33 @@ h4 {
         text-align: center;
     }
     #mission {
-        margin-left:5%;
-        margin-right:5%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
-    .btn-group-justified{
-        display:block;
+    .btn-group-justified {
+        display: block;
+    }
+    .items > h3 {
+        text-align: center;
+        font-size: 16px;
+    }
+    #main-body {
+        padding-left: 0 !important;
+    }
+    #main-body > h2 {
+        font-size: 24px;
+    }
+    .video {
+        border: none;
+        padding: 0;
+    }
+    #main-area {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
     }
 }
+
 
 /************************MEDIA QUERIES. DO NOT PUT CSS AFTER HERE!**********************/

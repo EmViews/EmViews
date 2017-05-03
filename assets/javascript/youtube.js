@@ -14,7 +14,7 @@ $(document).on('click', '.search-button', function() {
             var element = $("<div class='items'>")
             var title = $("<h3>").html(items[i].snippet.title);
             if ($(window).width() <= 800) {
-                video = $(`<iframe class='video w100' width='288' height='162' src='//www.youtube.com/embed/${items[i].id.videoId}' frameborder='0' allowfullscreen></iframe>`);
+                video = $(`<iframe class='video w100' width='320' height='180' src='//www.youtube.com/embed/${items[i].id.videoId}' frameborder='0' allowfullscreen></iframe>`);
             }else {
                 video = $(`<iframe class='video w100' width='854' height='480' src='//www.youtube.com/embed/${items[i].id.videoId}' frameborder='0' allowfullscreen></iframe>`);
             };
