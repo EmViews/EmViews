@@ -63,9 +63,20 @@
             <div id="search-result-2">
             </div>
         </div>
+        <div id="favorite-results" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <h2 class="headings" id="favorite-heading">Favorites</h2>
+            <!-- favorite-result is gonna list a bunch of stuff -->
+            <div id="favorite-result">
+            </div>
+        </div>
         <!-- Main body, three tabs of Product, Reddit, and Youtube -->
         <div id="main-body" class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
             <h2 class="headings product-headings" id="top-title"></h2>
+            <div id="favorite-div">
+            </div>
+            <br>
+            <div id="favoriteError-div">
+            </div>
             <div id="name-stars" class="row">
                 <div class="btn-group btn-group-justified" role="group" aria-label="...">
                     <div class="btn-group" role="group">
@@ -156,9 +167,6 @@
                         <h4 class="modal-title" id="myModalLabel">Log In</h4>
                     </div>
                     <div class="modal-body">
-                        <div id="logInErrors">
-                        </div>
-                        <br>
                         <p>Already have an account? Log in with e-mail:</p>
                         <form class="form-horizontal">
                             <div class="form-group">
@@ -201,9 +209,6 @@
                         <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
                     </div>
                     <div class="modal-body">
-                        <div id="signUpErrors">
-                        </div>
-                        <br>
                         <p>Need an account? Register with e-mail:</p>
                         <form class="form-horizontal" onsubmit="confirmPasswords()">
                             <div class="form-group">
@@ -244,7 +249,7 @@
         </div>
         <!-- end Sign Up modal -->
         <!-- data.js is JSON format called by response1 for database, delete when done -->
-        <script type="text/javascript" src="assets/javascript/data.js"></script>
+        <!-- <script type="text/javascript" src="assets/javascript/data.js"></script> -->
         <!-- search-result api -->
         <script type="text/javascript" src="assets/javascript/search-result.js"></script>
         <script type="text/javascript" src="assets/javascript/app.js"></script>

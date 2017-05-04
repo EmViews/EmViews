@@ -18,6 +18,8 @@ $(document).ready(function() {
             $("#main-logo").fadeOut(250);
             $("#mission").fadeOut(250);
             $("#result-heading").html('Showing Results for "' + productQuery + '":')
+            $('#favorites').hide();
+            $('#backToSearch').hide();
         });
 
         $(document).on('click', '#search-results-first', function() {
@@ -43,6 +45,14 @@ $(document).ready(function() {
             $("#product-btn").addClass("active");
             $("#reddit-btn").removeClass("active")
             $("#youtube-btn").removeClass("active");
+            $('#backToSearch').hide();
+            $('#favorite-results').hide();
+            // Note from and for John - rely more on hide/show as opposed to dynamically creating stuff like this:??
+            $('#authButtons1').html(`
+                <li id="favorites"><a href="#"><span class="glyphicon glyphicon-list"></span> Favorites</a></li>
+                <li id="logOut"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+            `);
+            $('#favorites').show();
         })
 
         $(document).on("click", "#product-btn", function() {

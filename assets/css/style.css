@@ -78,6 +78,16 @@ body {
     /*overflow: scroll;*/
 }
 
+#favorite-results {
+    display: none;
+}
+
+#favorite-result {
+    height: 700px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 .image-item {
     height: 200px;
     width: 200px;
@@ -229,6 +239,21 @@ h4 {
     float: left;
 }
 
+
+/* rather than using this, we should make the favorites btn accessible from the first page, allowing it to load the favorites bar page */
+#favorites {
+    display: none;
+}
+
+#favorite-div {
+    text-align: center;
+}
+
+#favoriteError-div {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
 
 /* end John's stuff... should be integrated into the rest of the css at some point */
 
