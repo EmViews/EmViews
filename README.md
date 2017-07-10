@@ -11,7 +11,7 @@ Emviews is a Yelp for products – aside from being short on cash, what’s a bi
 ![searchpage2](https://user-images.githubusercontent.com/16066443/27000253-700ba974-4d62-11e7-864a-01564002bd8d.JPG)
 
 ## Authors
- - ![Cullan Shewfelt][https://avatars2.githubusercontent.com/u/26754992?v=3&s=400](https://github.com/cullanrocks)
+ -  [https://avatars2.githubusercontent.com/u/26754992?v=3&s=400](https://github.com/cullanrocks)
  - ![Jake Jinsuk Park](https://github.com/bluffingtuna)
  - ![John Nguyen](https://github.com/drjohnsez)
  - ![William Leung](https://github.com/thisiswhale)
