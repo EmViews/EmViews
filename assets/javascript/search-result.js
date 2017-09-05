@@ -1,6 +1,6 @@
-var productQuery;
 $(document).ready(function() {
-
+var productQuery;
+    //Search button calls Walmart API, and start rendering JSON result
     $(document).on("click", ".search-button", function() {
         event.preventDefault();
         //empty out the product-input
@@ -10,6 +10,7 @@ $(document).ready(function() {
         //Submit btn click, searches goes to Ajax to search
 
         var APIKey = "b7zex42y8vhz2wr56d8jwq5y";
+        
         productQuery = $("#product-input").val().trim();
 
         var sort = "relevance";
