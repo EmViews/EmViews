@@ -1,9 +1,6 @@
 var productQuery;
 $(document).ready(function() {
 
-    // calling this json object from data.js
-    //console.log(response);
-
     $(document).on("click", ".search-button", function() {
         event.preventDefault();
         //empty out the product-input
@@ -13,21 +10,16 @@ $(document).ready(function() {
         //Submit btn click, searches goes to Ajax to search
 
         var APIKey = "b7zex42y8vhz2wr56d8jwq5y";
-        productQuery = $("#product-input").val().trim()
-            // .replace(/ /g, "+");
+        productQuery = $("#product-input").val().trim();
+
         var sort = "relevance";
         var categoryId;
-        console.log("You submitted: " + productQuery);
+        //BUG CHECK
+        //console.log("You submitted: " + productQuery);
 
         $.getJSON("https://api.walmartlabs.com/v1/search?apiKey=b7zex42y8vhz2wr56d8jwq5y&query=" + productQuery + "&responseGroup=full&callback=?",
                 function(response) {
-
-                    //check I receive a return
-                    // console.log("Calling response:");
-                    // console.log(response);
-
                     for (var i = 0; i < response.items.length; i++) {
-                        //need to grab UPC, image, title
                         //searchItem div have Title link,
                         var searchItem = $("<div class='search-item col-lg-3' id='item'>");
 
@@ -73,8 +65,7 @@ $(document).ready(function() {
                         var thumbnail = $("<a class='thumbnail' id='carousel-selector-0'>");
                         var image1 = $("<img class='imageBox' id='primary-image' style='height:125px'>").attr("src", response.items[index].largeImage);
                        
-                       //These RATING STARS WORK
-                        //set the ratings
+                        //set the star ratings
                         $(".ratings").empty();
                          $('.ratings').rating({size:'xs', displayOnly:true, hoverEnabled:false});
                          $('.ratings').rating('update', response.items[index].customerRating);
@@ -167,7 +158,7 @@ $(document).ready(function() {
 
 });
 
-//------------Carousel Scroller - start
+//------------Carousel Scroller IS RIGHT HERE -----------------
 $(document).on("click", "[id^=carousel-selector-]", function() {
     $('#myCarousel').carousel('pause');
     //Handles the carousel thumbnails
@@ -187,4 +178,4 @@ $(document).on("click", "[id^=carousel-selector-]", function() {
         $('#carousel-text').html($('#slide-content-' + id).html());
     });
 });
-//------------Carousel Scroller - end
+//------------Carousel Scroller - end -----------------------
